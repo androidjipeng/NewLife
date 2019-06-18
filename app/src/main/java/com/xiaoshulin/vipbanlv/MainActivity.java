@@ -1111,8 +1111,10 @@ public class MainActivity extends BaseMVPActivity implements MainView, BottomNav
 
     @Override
     protected void onResume() {
+
         /**
          * 获取剪贴板中的数据
+         * 测试
          * */
         Intent intent = getIntent();
         AcceptClipboardManager();//获得粘贴板里的内容
