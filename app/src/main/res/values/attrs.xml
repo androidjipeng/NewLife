@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TitleBar">
+        <attr name="leftType" format="enum">
+            <enum name="icon" value="1" />
+            <enum name="text" value="2" />
+            <enum name="both" value="3" />
+            <enum name="none" value="0" />
+        </attr>
+        <attr name="rightType" format="enum">
+            <enum name="icon" value="1" />
+            <enum name="text" value="2" />
+            <enum name="none" value="0" />
+        </attr>
+        <attr name="leftText" format="string" />
+        <attr name="leftIcon" format="reference" />
+        <attr name="centerText" format="string" />
+        <attr name="rightText" format="string" />
+        <attr name="rightIcon" format="reference" />
+        <attr name="leftTextColor" format="color" />
+        <attr name="centerTextColor" format="color" />
+        <attr name="rightTextColor" format="color" />
+        <attr name="leftTextSize" format="dimension" />
+        <attr name="centerTextSize" format="dimension" />
+        <attr name="rightTextSize" format="dimension" />
+        <attr name="leftMinWidth" format="dimension" />
+        <attr name="rightMinWidth" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="BezierView">
+        <attr name="color" format="color" />
+        <attr name="startPointOffset" format="dimension" />
+        <attr name="controlPointOffset" format="dimension" />
+    </declare-styleable>
+</resources>

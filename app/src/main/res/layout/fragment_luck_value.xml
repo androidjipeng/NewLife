@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".user.frament.LuckValueFragment">
+
+    <com.xiaoshulin.vipbanlv.utils.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/padding_48dp"
+        android:background="@color/white"
+        app:centerText="万人合伙人计划"
+        app:centerTextColor="@color/colorPrimary"
+        app:leftTextColor="@color/colorPrimary"
+        app:leftTextSize="14sp"
+        app:leftType="both" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_10dp"
+        android:layout_marginBottom="@dimen/padding_15dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/padding_15dp"
+            android:gravity="center"
+            android:text="提现金额:"
+            android:textColor="@color/color_333333" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submit_award"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="@dimen/padding_15dp"
+        android:background="@drawable/bg_orange_round_corner_ripple"
+        android:text="提建议得奖励"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:layout_marginTop="@dimen/small_db"
+        android:layout_marginRight="@dimen/padding_15dp"
+        android:layout_marginLeft="@dimen/padding_15dp"
+        android:textColor="@color/color_828292"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="您购买的账号只能您一个人一个端试用，如果是自己多端或分享给其他人试用导致无法享受会员服务，我们将不予解决，如果不是上述原因导致的无法观看情况，可以通过《伴侣你好》微信公众号和24小时客服微信号：xiaoshulinapp,实时客服反馈！" />
+
+</LinearLayout>

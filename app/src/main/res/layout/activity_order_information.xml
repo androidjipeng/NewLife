@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.OrderInformationActivity">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="#00000000"
+        app:cardBackgroundColor="#00000000"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="1dp"
+        app:cardPreventCornerOverlap="false"
+        app:contentPadding="10dp">
+
+        <TextView
+            android:id="@+id/big_inform_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/img_loge"
+            android:padding="@dimen/padding_15dp"
+            android:paddingTop="@dimen/small_db"
+            android:text="android"
+            android:textColor="@color/color_828292"
+            android:textSize="@dimen/big_word" />
+    </android.support.v7.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rel1"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/small_db"
+                android:layout_marginBottom="@dimen/small_db"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:paddingTop="@dimen/small_db"
+                    android:text="到期时间："
+                    android:textColor="@color/color_333333" />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tv1"
+                    android:paddingLeft="@dimen/small_db"
+                    android:paddingTop="@dimen/small_db"
+                    android:text="android"
+                    android:textColor="@color/color_828292" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rel2"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/small_db"
+                android:layout_marginBottom="@dimen/small_db"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+
+                <TextView
+                    android:id="@+id/tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:paddingTop="@dimen/small_db"
+                    android:text="微信客服："
+                    android:textColor="@color/color_333333" />
+
+                <TextView
+                    android:id="@+id/custom_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tv2"
+                    android:paddingLeft="@dimen/small_db"
+                    android:paddingTop="@dimen/small_db"
+                    android:text="12345"
+                    android:textColor="@color/color_828292" />
+
+                <TextView
+                    android:id="@+id/btn_copy1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/padding_10dp"
+                    android:background="@drawable/bg_orange_round_corner_ripple"
+                    android:gravity="center"
+                    android:padding="@dimen/small_db"
+                    android:text="复制"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rel3"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/small_db"
+                android:layout_marginBottom="@dimen/small_db"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+
+                <TextView
+                    android:id="@+id/tv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:paddingTop="@dimen/small_db"
+                    android:text="账号："
+                    android:textColor="@color/color_333333" />
+
+                <TextView
+                    android:id="@+id/account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@+id/tv3"
+                    android:paddingLeft="@dimen/small_db"
+                    android:paddingTop="@dimen/small_db"
+                    android:text="12345"
+                    android:textColor="@color/color_828292" />
+
+                <TextView
+                    android:id="@+id/btn_copy2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/padding_10dp"
+                    android:background="@drawable/bg_orange_round_corner_ripple"
+                    android:padding="@dimen/small_db"
+                    android:text="复制"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rel4"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/small_db"
+                android:layout_marginBottom="@dimen/small_db"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:paddingTop="@dimen/small_db"
+                    android:text="密码："
+                    android:textColor="@color/color_333333" />
+
+                <TextView
+                    android:id="@+id/password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@+id/tv4"
+                    android:paddingLeft="@dimen/small_db"
+                    android:paddingTop="@dimen/small_db"
+                    android:text="android"
+                    android:textColor="@color/color_828292" />
+
+                <TextView
+                    android:id="@+id/btn_copy3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/padding_10dp"
+                    android:background="@drawable/bg_orange_round_corner_ripple"
+                    android:padding="@dimen/small_db"
+                    android:text="复制"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_15dp"
+                android:layout_marginTop="@dimen/padding_15dp"
+                android:layout_marginRight="@dimen/padding_15dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_orange_round_corner_ripple"
+                    android:text="要验证码"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btn_code1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_15dp"
+                    android:background="@drawable/bg_orange_round_corner_ripple"
+                    android:text="小树林投诉"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/complaint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_15dp"
+                    android:background="@drawable/bg_orange_round_corner_ripple"
+                    android:text="支付宝客服号：18621174664"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/complaintwechat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/padding_15dp"
+                android:layout_marginTop="@dimen/padding_15dp"
+                android:layout_marginRight="@dimen/padding_15dp"
+                android:background="@drawable/bg_orange_round_corner_ripple"
+                android:text="微信客服微信号：xiaoshulinapp"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/complaintqq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/padding_15dp"
+                android:layout_marginTop="@dimen/padding_15dp"
+                android:layout_marginRight="@dimen/padding_15dp"
+                android:background="@drawable/bg_orange_round_corner_ripple"
+                android:text="QQ客服QQ号：3242252282"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_15dp"
+                android:layout_marginTop="@dimen/small_db"
+                android:layout_marginRight="@dimen/padding_15dp"
+                android:text="您购买的账号只能您一个人一个端试用，如果是自己多端或分享给其他人试用导致无法享受会员服务，我们将不予解决，如果不是上述原因导致的无法观看情况，可以通过《伴侣你好》微信公众号和24小时客服微信号：xiaoshulinapp,实时客服反馈！"
+                android:textColor="@color/color_828292" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

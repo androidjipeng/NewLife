@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <com.xiaoshulin.vipbanlv.utils.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        app:centerText="消息中心"
+        app:centerTextColor="@color/colorAccent"
+        app:centerTextSize="16sp" />
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:layout_marginTop="@dimen/small_db"
+        android:id="@+id/mess_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

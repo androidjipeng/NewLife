@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_pay1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/padding_15dp"
+            android:paddingBottom="@dimen/padding_15dp"
+            android:text="(129元)购买成功后有365天担保期" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/mo_ren" />
+
+        <TextView
+            android:id="@+id/tv_pay2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/padding_15dp"
+            android:paddingBottom="@dimen/padding_15dp"
+            android:text="支付宝支付" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/mo_ren" />
+
+        <TextView
+            android:id="@+id/tv_payWeixin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/padding_15dp"
+            android:paddingBottom="@dimen/padding_15dp"
+            android:text="微信支付" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/mo_ren" />
+
+        <TextView
+            android:id="@+id/tv_pay3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/padding_15dp"
+            android:paddingBottom="@dimen/padding_15dp"
+            android:text="V币支付（余额24.80元）[余额不足]" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/mo_ren" />
+
+        <TextView
+            android:id="@+id/tv_pay4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/padding_15dp"
+            android:paddingBottom="@dimen/padding_15dp"
+            android:text="V币优充" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/mo_ren" />
+
+        <TextView
+            android:id="@+id/tv_pay5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/padding_15dp"
+            android:paddingBottom="@dimen/padding_15dp"
+            android:text="一人购买全家看" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:background="@color/mo_ren" />
+
+        <TextView
+            android:id="@+id/pay_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/padding_15dp"
+            android:paddingBottom="@dimen/padding_15dp"
+            android:text="取消" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

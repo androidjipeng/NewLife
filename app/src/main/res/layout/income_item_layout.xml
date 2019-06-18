@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_income"
+        android:layout_marginBottom="@dimen/small_db"
+        android:layout_marginTop="@dimen/small_db"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:id="@+id/tv_key"
+            android:textColor="@color/color_333333"
+            android:layout_marginLeft="@dimen/padding_15dp"
+            android:gravity="left|center"
+            android:text="昵称"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tv_value"
+            android:textColor="@color/color_828292"
+            android:layout_marginRight="@dimen/padding_15dp"
+            android:gravity="center"
+            android:text="昵称"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</LinearLayout>

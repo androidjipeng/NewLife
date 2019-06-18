@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl_mess"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="@dimen/small_db"
+        android:layout_marginBottom="@dimen/small_db"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/img_mess"
+            android:layout_width="@dimen/padding_48dp"
+            android:layout_height="@dimen/padding_48dp"
+            android:layout_marginLeft="@dimen/padding_15dp"
+            android:layout_marginTop="@dimen/small_db"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_mess_tite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/small_db"
+            android:layout_marginTop="@dimen/small_db"
+            android:layout_toRightOf="@+id/img_mess"
+            android:text="客服小哥"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/middle_word" />
+
+        <TextView
+            android:id="@+id/tv_mess_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_mess_tite"
+            android:layout_marginLeft="@dimen/small_db"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="@dimen/padding_15dp"
+            android:layout_toRightOf="@+id/img_mess"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="客服小哥客服小哥客服小哥客服小哥客服小哥客服小哥"
+            android:textColor="@color/colorTextThirdly"
+            android:textSize="@dimen/small_word" />
+
+
+        <TextView
+            android:id="@+id/mess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/small_db"
+            android:layout_marginRight="@dimen/padding_15dp"
+            android:gravity="center"
+            android:text="2018-11-23"
+            android:textColor="@color/colorTextThirdly"
+            android:textSize="@dimen/small_word" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/cnl"
+    tools:context=".activity.ShareWechatActivity">
+   <LinearLayout
+       android:background="@color/white"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+       <com.xiaoshulin.vipbanlv.utils.TitleBar
+           android:id="@+id/title_bar"
+           android:layout_width="match_parent"
+           android:layout_height="45dp"
+           android:background="@color/white"
+           app:centerText="分享快乐"
+           app:centerTextSize="16sp"
+           app:centerTextColor="@color/colorAccent" />
+       <ImageView
+           android:id="@+id/share_bg"
+           android:src="@drawable/ic_share1"
+           android:layout_width="wrap_content"
+           android:layout_height="400dp" />
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <LinearLayout
+               android:layout_marginLeft="50dp"
+               android:layout_alignParentLeft="true"
+               android:orientation="vertical"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content">
+               <ImageView
+                   android:id="@+id/share_wechat"
+                   android:src="@drawable/ic_orange_share"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" />
+               <TextView
+                   android:id="@+id/tv_share_wechat"
+                   android:layout_marginTop="@dimen/small_db"
+                   android:textColor="@color/orange"
+                   android:text="微信好友"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" />
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_marginRight="50dp"
+               android:layout_alignParentRight="true"
+               android:orientation="vertical"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content">
+               <ImageView
+                   android:id="@+id/share_friend"
+                   android:src="@drawable/ic_orange_share_friend"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" />
+               <TextView
+                   android:id="@+id/tv_share_friend"
+                   android:layout_marginTop="@dimen/small_db"
+                   android:textColor="@color/orange"
+                   android:text="   朋友圈"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" />
+           </LinearLayout>
+
+       </RelativeLayout>
+   </LinearLayout>
+</android.support.constraint.ConstraintLayout>

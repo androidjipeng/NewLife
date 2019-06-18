@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">小树林</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="supplyAccountInfo">vipbanlv.com#为密码的默认前缀，用户只需要再追加一个三位数字即可，您的密码要按照我们的密码规范哦！《可以先提供的日期短一点，买的用户会多一点，到期后APP会提示您修改密码重新提交的》，保存前请认真检查账号密码可否正常登陆对应平台，提交的账号必须是对应平台的有效会员账号，不然将不能通过我们的人工审核，还将扣除您1V的信用等级， 我们的客服会添加您为好友，会详细告知您的账号安全等级和安全注意事项，她会更全面的保护您的权益。每个账号最多出售三人！</string>
+    <string name="zhifubaoinfo">可提现金额为您提供的试用账号到期后或者圈子商品用户购买担保期到期后的收益，还未到期的账号或圈子商品赚取的费用不可提现，提现成功后将在一至两个工作日到您的提现支付宝账号，提现将收取10%的平台服务费，提现金额只能用于提现，不能用于购买、充V等其他APP业务</string>
+    <string name="xsl">想进微信《红包福利群》或者五分钟内没有人回复，请联系微信客服微信号：xiaoshulinapp</string>
+    <string name="tip">请先按照我们的密码规则修改一下对应平台的密码，自己验证登录成功后再来小树林提交哦，如果提交密码错误会导致我们人工登录审核失败，会对您的小树林APP信用值造成影响，请知晓！</string>
+</resources>

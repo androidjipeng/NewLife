@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_marginBottom="@dimen/small_db"
+            android:layout_marginTop="@dimen/small_db"
+            android:background="@color/white"
+            android:id="@+id/relativelayout"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/img_loge"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true" />
+
+            <TextView
+                android:paddingTop="@dimen/small_db"
+                android:id="@+id/order_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/img_loge"
+                android:text="" />
+
+            <TextView
+                android:paddingTop="@dimen/small_db"
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/img_right"
+                android:text="" />
+
+            <ImageView
+                android:paddingTop="@dimen/small_db"
+                android:id="@+id/img_right"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/right_arrow"/>
+        </RelativeLayout>
+
+</LinearLayout>

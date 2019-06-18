@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_infor"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/padding_48dp"
+        android:layout_marginBottom="@dimen/small_db"
+        android:layout_marginTop="@dimen/small_db"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/infor_mess"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/padding_15dp"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:lines="1"
+            android:text="sdfsdfsdfsdfsdfsdfsdfsdf"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="@dimen/middle_word" />
+
+        <TextView
+            android:id="@+id/infor_time"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="hello world"
+            android:textColor="@color/colorTextThirdly"
+            android:textSize="@dimen/small_word" />
+
+        <ImageView
+            android:id="@+id/infor_img"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/small_db"
+            android:layout_marginRight="@dimen/padding_15dp"
+            android:src="@drawable/red_right" />
+    </LinearLayout>
+</LinearLayout>

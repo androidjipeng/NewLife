@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_chatMessage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.ChatMessageActivity">
+
+    <com.xiaoshulin.vipbanlv.utils.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        app:centerText=""
+        app:centerTextColor="@color/colorAccent"
+        app:centerTextSize="16sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.jcodecraeer.xrecyclerview.XRecyclerView
+                android:id="@+id/chat_recycle"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/img_custom"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="@dimen/padding_10dp"
+                        android:layout_marginTop="@dimen/small_db"
+                        android:src="@drawable/icon_message_service" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/small_db"
+                        android:layout_marginRight="@dimen/padding_10dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/et_keyword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/bg_white_round_corner_ripple"
+                            android:hint="请输入..."
+                            android:imeOptions="actionDone"
+                            android:padding="8dp"
+                            android:textColor="@color/colorTextPrimary"
+                            android:textColorHint="@color/colorTextThirdly"
+                            android:textSize="14sp"
+                            android:windowSoftInputMode="stateHidden|adjustResize" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/img_emoji"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/small_db"
+                        android:src="@drawable/face"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/send"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="@dimen/padding_10dp"
+                        android:background="@drawable/send_round_corner_ripple"
+                        android:padding="@dimen/small_db"
+                        android:text="发送"
+                        android:textColor="@color/white"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/img_keyword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/padding_10dp"
+                        android:src="@drawable/more_ios" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/viewPage"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/title_inform"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/half_tran"
+            android:paddingLeft="@dimen/small_db"
+            android:paddingRight="@dimen/small_db"
+            android:text="@string/xsl"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+</LinearLayout>

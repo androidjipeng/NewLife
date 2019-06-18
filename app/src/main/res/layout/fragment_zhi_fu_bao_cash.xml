@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".user.frament.ZhiFuBaoCashFragment">
+
+
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/padding_48dp">
+        <com.xiaoshulin.vipbanlv.utils.TitleBar
+            android:id="@+id/titlebar"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/padding_48dp"
+            app:centerText="申请提现"
+            app:centerTextColor="@color/colorPrimary" />
+        <Button
+            android:id="@+id/btn_custom"
+            android:textColor="@color/white"
+            android:layout_marginRight="@dimen/small_db"
+            android:layout_marginTop="@dimen/small_db"
+            android:background="@drawable/bg_orange_round_corner_ripple"
+            android:text="官方客服"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/padding_10dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/padding_15dp"
+            android:gravity="center"
+            android:text="提现金额:"
+            android:textColor="@color/color_333333" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/money_value"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/padding_15dp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/color_828292" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/padding_10dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/padding_15dp"
+            android:gravity="center"
+            android:text="支付宝账号:"
+            android:textColor="@color/color_333333" />
+
+        <EditText
+            android:id="@+id/account"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/padding_10dp"
+            android:layout_marginRight="@dimen/padding_15dp"
+            android:background="@null"
+            android:gravity="left|center"
+            android:hint="请输入提现支付宝账户"
+            android:textColor="@color/color_828292"
+            android:textSize="@dimen/small_word" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/cashMoney"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_15dp"
+        android:layout_marginRight="@dimen/padding_15dp"
+        android:layout_marginTop="@dimen/padding_15dp"
+        android:background="@drawable/bg_orange_round_corner_ripple"
+        android:text="申请提现"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:layout_marginTop="@dimen/small_db"
+        android:layout_marginRight="@dimen/padding_15dp"
+        android:layout_marginLeft="@dimen/padding_15dp"
+        android:textColor="@color/color_828292"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/zhifubaoinfo" />
+
+
+</LinearLayout>

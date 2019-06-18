@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">  
+      
+    <item>  
+        
+        <selector xmlns:android="http://schemas.android.com/apk/res/android">  
+            <item android:state_pressed="true">  
+                <shape android:shape="oval" >  
+                    <corners android:radius="90dip"/>  
+                    <solid android:color="@color/red" /> <!-- 这是外圆按下颜色 #f3876f  -->
+                    <size android:width="62dp" android:height="62dp"/>  
+                </shape>  
+            </item>  
+              
+            <item>  
+                <shape android:shape="oval" >  
+                    <corners android:radius="90dip"/>
+                    <solid android:color="@color/white" />  
+                    <size android:width="60dp" android:height="60dp"/>  
+                </shape>  
+            </item>            
+        </selector>         
+    </item>  
+      
+    
+    
+    
+    <!-- 这是设置圆圈包边 的宽度 -->
+    <item android:bottom="2dp" android:right="2dp" android:top="2dp" android:left="2dp" >  
+        <selector xmlns:android="http://schemas.android.com/apk/res/android">  
+            <item android:state_pressed="true">  
+                <shape android:shape="oval" >  
+                    <corners android:radius="90dip"/>  
+                    <solid android:color="@color/red" />  <!-- 这是内圆按下颜色 #e66b4f  --> 
+                    <size android:width="60dp" android:height="60dp"/>  
+                </shape>  
+            </item>  
+              
+            <item>  
+                <shape android:shape="oval" >  
+                    <corners android:radius="90dip"/>
+                    <solid android:color="@color/red" />
+                    <size android:width="60dp" android:height="60dp"/>  
+                </shape>  
+            </item>  
+          
+        </selector>  
+    </item>  
+      
+</layer-list> 

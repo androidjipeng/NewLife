@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#263136</color>
+    <color name="colorPrimaryDark">#263136</color>
+    <color name="colorAccent">#263136</color>
+
+
+    <color name="colorWindowBackground">#f4f4f4</color>
+    <color name="colorTextPrimary">#333333</color>
+    <color name="colorTextSecondary">#666666</color>
+    <color name="colorTextThirdly">#999999</color>
+    <color name="word666666">#666666</color>
+    <color name="color_828292">#828292</color>
+    <color name="color_333333">#333333</color>
+    <color name="white">#ffffff</color>
+    <color name="red">#BA2835</color>
+    <color name="orange">#FFA500</color>
+    <color name="green">#228B22</color>
+    <color name="mo_ren">#E8E8E7</color>
+    <color name="half_tran">#80000000</color>
+</resources>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="1dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_15dp"
+        android:layout_marginTop="@dimen/small_db"
+        android:layout_marginRight="@dimen/padding_15dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/img_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/sharemore_location" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/small_db"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="用户ID: 1234"
+                android:textColor="#677a9e"
+                android:textSize="@dimen/big_word"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_item_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_db"
+                android:gravity="left"
+                android:textColor="@color/colorTextSecondary"
+                android:textSize="@dimen/middle_word" />
+
+            <com.xiaoshulin.vipbanlv.utils.MyGridview
+                android:id="@+id/gridView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:horizontalSpacing="5dp"
+                android:numColumns="3"
+                android:verticalSpacing="12dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_tip"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="@dimen/padding_10dp"
+                android:background="#EFEFEF"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_tip"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/small_db"
+                    android:src="@mipmap/iconapp" />
+
+                <TextView
+                    android:id="@+id/tip_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/small_db"
+                    android:layout_marginRight="@dimen/small_db"
+                    android:gravity="left|center"
+                    android:text="点我！点我！就可以去支付宝小树林偷能量了。" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_db"
+                android:layout_marginBottom="@dimen/small_db"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_rmb1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="rmb：1.26"
+                    android:textColor="#ff8929" />
+
+                <TextView
+                    android:id="@+id/tv_rmb1_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_10dp"
+                    android:text="#阳光卡价格，点我优惠更多#"
+                    android:textColor="#677a9e" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_db"
+                android:layout_marginBottom="@dimen/small_db"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_rmb2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="rmb：3.26"
+                    android:textColor="#b71e2c" />
+
+                <TextView
+                    android:id="@+id/tv_rmb2_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_10dp"
+                    android:text="#30天担保期#"
+                    android:textColor="#677a9e" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_db"
+                android:layout_marginBottom="@dimen/small_db"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/describe1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="#我要收藏#"
+                    android:textColor="#677a9e"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/describe2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_10dp"
+                    android:text="#立即抢购#"
+                    android:textColor="#677a9e"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/describe3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_10dp"
+                    android:text="#客服咨询#"
+                    android:textColor="#677a9e"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_db"
+                android:layout_marginBottom="@dimen/small_db"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="#分享#"
+                    android:textColor="#677a9e"
+                    android:textSize="@dimen/small_word" />
+
+                <TextView
+                    android:id="@+id/complain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_10dp"
+                    android:text="#投诉#"
+                    android:textColor="#677a9e"
+                    android:textSize="@dimen/small_word" />
+
+                <TextView
+                    android:id="@+id/delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_10dp"
+                    android:text="#删除#"
+                    android:textColor="#677a9e"
+                    android:textSize="@dimen/small_word"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/rewrite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_10dp"
+                    android:text="#编辑#"
+                    android:textColor="#677a9e"
+                    android:textSize="@dimen/small_word"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/back_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_10dp"
+                    android:text="#置顶#"
+                    android:textColor="#677a9e"
+                    android:textSize="@dimen/small_word"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/appreciate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/padding_10dp"
+                    android:text="#欣赏#"
+                    android:textColor="#677a9e"
+                    android:textSize="@dimen/small_word" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/middle_word"
+                android:text="1天前"
+                android:textColor="@color/colorTextThirdly"
+                android:textSize="@dimen/small_word" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

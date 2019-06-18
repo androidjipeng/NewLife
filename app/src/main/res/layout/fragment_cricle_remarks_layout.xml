@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".circleFrags.fragment.RemarksFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/padding_48dp"
+        android:background="@color/white">
+
+        <Button
+            android:id="@+id/btn_left"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/small_db"
+            android:layout_marginTop="@dimen/small_db"
+            android:layout_marginRight="@dimen/small_db"
+            android:background="@drawable/bg_orange_round_corner_ripple"
+            android:text="客服咨询"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="圈子备注信息"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="@dimen/middle_word"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_right"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/small_db"
+            android:layout_marginRight="@dimen/small_db"
+            android:background="@drawable/bg_orange_round_corner_ripple"
+            android:text="官方客服"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <com.xiaoshulin.vipbanlv.utils.MyTextView
+        android:autoLink="web"
+        android:id="@+id/remark_information"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/padding_15dp"
+        android:layout_marginTop="@dimen/padding_10dp"
+        android:layout_marginRight="@dimen/padding_15dp"
+       />
+
+</LinearLayout>

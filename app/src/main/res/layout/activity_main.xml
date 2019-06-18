@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/layFrame"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <com.ashokvarma.bottomnavigation.BottomNavigationBar
+                android:id="@+id/bottom_navigation_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/text_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/padding_45dp"
+            android:layout_marginBottom="110dp"
+            android:background="@drawable/red_circle_bg"
+            android:clickable="true"
+            android:gravity="center"
+            android:minWidth="@dimen/padding_40dp"
+            android:minHeight="@dimen/padding_40dp"
+            android:text="福利"
+            android:textColor="@color/white"
+            android:textSize="@dimen/small_word" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+
+        android:id="@+id/ll_danmaku"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/text_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/padding_45dp"
+            android:layout_marginBottom="110dp"
+            android:background="@drawable/red_circle_bg"
+            android:clickable="true"
+            android:gravity="center"
+            android:minWidth="@dimen/padding_40dp"
+            android:minHeight="@dimen/padding_40dp"
+            android:text="关闭"
+            android:textColor="@color/white"
+            android:textSize="@dimen/small_word" />
+
+        <master.flame.danmaku.ui.widget.DanmakuView
+            android:id="@+id/sv_danmaku"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/padding_45dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/text_hongbao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/red_circle_bg"
+                android:clickable="true"
+                android:gravity="center"
+                android:minWidth="120dp"
+                android:minHeight="@dimen/padding_40dp"
+                android:text="进1号红包群"
+                android:textColor="@color/white"
+                android:textSize="@dimen/middle_word" />
+
+            <Button
+                android:id="@+id/text_support"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/red_circle_bg"
+                android:clickable="true"
+                android:gravity="center"
+                android:minWidth="@dimen/padding_40dp"
+                android:minHeight="@dimen/padding_40dp"
+                android:text="赏"
+                android:textColor="@color/white"
+                android:textSize="@dimen/middle_word" />
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

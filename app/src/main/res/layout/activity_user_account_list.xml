@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/ll_accountlist"
+    tools:context="com.xiaoshulin.vipbanlv.user.UserAccountListActivity">
+    <com.xiaoshulin.vipbanlv.utils.TitleBar
+        android:id="@+id/titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/padding_48dp"
+        android:background="@color/white"
+        app:centerText=""
+        app:centerTextColor="@color/colorPrimary" />
+
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/common_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

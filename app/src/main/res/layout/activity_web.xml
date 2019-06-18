@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/re"
+    tools:context=".WebActivity">
+
+
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <ProgressBar
+        android:id="@+id/roundProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="2.5dp"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/progress_bar_states" />
+    <LinearLayout
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_order"
+            android:layout_marginRight="@dimen/padding_15dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:text="订单"
+            android:textSize="16sp"
+            android:background="@drawable/my_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_complaint"
+            android:layout_marginLeft="@dimen/padding_15dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:text="投诉"
+            android:textSize="16sp"
+            android:background="@drawable/my_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>

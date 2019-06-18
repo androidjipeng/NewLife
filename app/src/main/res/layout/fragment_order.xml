@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.xiaoshulin.vipbanlv.fragment.OrderFragment">
+
+    <com.xiaoshulin.vipbanlv.utils.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        app:centerText="订单"
+        app:centerTextColor="@color/colorAccent"
+        app:centerTextSize="16sp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/Order_recycle"
+            android:layout_marginTop="@dimen/small_db"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:id="@+id/rela"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/no_record"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="您还没有任何的购买记录哦！"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/btnweb"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/no_record"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/small_db"
+                android:background="@drawable/bg_orange_round_corner_ripple"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="去小树林看看"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+    </FrameLayout>
+</LinearLayout>
