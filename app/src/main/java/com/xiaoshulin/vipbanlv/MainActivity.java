@@ -158,7 +158,7 @@ import master.flame.danmaku.danmaku.parser.BaseDanmakuParser;
 import master.flame.danmaku.danmaku.parser.IDataSource;
 import master.flame.danmaku.danmaku.util.IOUtils;
 import okhttp3.Call;
-
+/**首页测试*/
 public class MainActivity extends BaseMVPActivity implements MainView, BottomNavigationBar.OnTabSelectedListener {
 
     private static final String TAG = "MainActivity";
