@@ -142,7 +142,7 @@ public class CricleRemarksPresenter extends BasePresenter {
                 "5：我有一些好的建议。\n" +
                 "\n" + "\uD83D\uDC8B" +
                 "在《小树林》APP平台的圈子备注信息：\n" + con + "\n" +
-                "圈子剩余担保期：0天\n" + "\uD83D\uDC8B" +
+//                "圈子剩余担保期：0天\n" + "\uD83D\uDC8B" +
                 "发布人ID：" + produceid + "\n" + "\uD83D\uDC8B" +
                 "微信客服：xiaoshulinapp";
 

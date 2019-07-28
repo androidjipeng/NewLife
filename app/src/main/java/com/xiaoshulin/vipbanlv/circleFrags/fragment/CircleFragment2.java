@@ -266,7 +266,7 @@ public class CircleFragment2 extends BaseMVPFragment implements IAllCircleView,V
                                 " 在《小树林》APP平台购买的圈子信息：\n" +newContent+
                                 "\n" +
                                 "\n" +
-                                "圈子剩余担保期：365天\n" + "\uD83D\uDC8B" +
+//                                "圈子剩余担保期：365天\n" + "\uD83D\uDC8B" +
                                 " 发布人ID："+list.get(position).getCircleuid()+"\n" + "\uD83D\uDC8B" +
                                 " 微信客服：xiaoshulinapp";
 
@@ -330,7 +330,7 @@ public class CircleFragment2 extends BaseMVPFragment implements IAllCircleView,V
                 "在《小树林》APP平台的圈子信息：\n" +
                 messContent+
                 "\n\n" +
-                "圈子剩余担保期：365天\n" + "\uD83D\uDC8B" +
+//                "圈子剩余担保期：365天\n" + "\uD83D\uDC8B" +
                 "发布人ID："+circleuid+"\n" + "\uD83D\uDC8B" +
                 "微信客服：xiaoshulinapp";
         bean.setContent(mess);
@@ -692,10 +692,11 @@ public class CircleFragment2 extends BaseMVPFragment implements IAllCircleView,V
         orderInfo += "&out_trade_no=" + "\"" + orderid + "\"";
 
         // 商品名称
-        orderInfo += "&subject=" + "\"" + subject + "\"";
+        orderInfo += "&subject=" + "\"" + subject +" 手机版本号："+Utils.getSystemVersion()+" 手机型号："+Utils.getSystemModel()+ "\"";
 
         // 商品详情
-        orderInfo += "&body=" + "\"" + body + "\"";
+        orderInfo += "&body=" + "\"" + body +" 手机版本号："+Utils.getSystemVersion()+" 手机型号："+Utils.getSystemModel()+ "\"";
+
 
         // 商品金额
         orderInfo += "&total_fee=" + "\"" + price + "\"";
