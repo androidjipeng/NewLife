@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
@@ -27,7 +28,7 @@ import com.xiaoshulin.vipbanlv.view.ICommentView;
  */
 @Route(path = "/activity/CommonActivity")
 public class CommonActivity extends BaseMVPActivity implements ICommentView {
-
+    private static final String TAG = "CommonActivity";
     @Autowired
     public int tag;
     @Autowired
@@ -76,6 +77,7 @@ public class CommonActivity extends BaseMVPActivity implements ICommentView {
                 break;
             case 2:
                 /**圈子备注*/
+                Log.e(TAG, "initData:       cricleid:"+cricleid+"         produceid:"+produceid);
                 fragment = RemarksFragment.newInstance(cricleid, produceid);
                 break;
             default:

@@ -35,8 +35,8 @@ public class HomeFragmentPresenter extends BasePresenter {
         MainDataBean dataBean11=new MainDataBean("寻租、赚钱租购社区","可寻租可赚钱","https://mp.weixin.qq.com/s/pQpu5ysd99O7JTlT0BL1Vw");
         list.add(dataBean11);
 
-//        MainDataBean dataBean1 = new MainDataBean("小树林生活", "名站一网打尽","http://m.banlvnihao.icoc.cc");
-//        list.add(dataBean1);
+        MainDataBean dataBean1 = new MainDataBean("小树林生活", "名站一网打尽","http://www.vipbanlv.com/v2_test/#!/life");//http://m.banlvnihao.icoc.cc
+        list.add(dataBean1);
 
         MainDataBean dataBean6 = new MainDataBean("央视、卫视电视直播", "带你走进电视世界","http://wap.leshi123.com");
         list.add(dataBean6);

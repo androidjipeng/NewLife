@@ -133,7 +133,7 @@ public class CricleRemarksPresenter extends BasePresenter {
         String mess = "我对您的商品有一些疑惑，想咨询一下。\n" +
                 "\n" + "\uD83D\uDC8B" +
                 "长按复制这条消息即可进入圈子详情页。\n" +
-                "圈子ID：" + "\uD83D\uDC8B" + cricleId + "*8*1374" + "\uD83D\uDC8B" + "\n" +
+                "圈子ID：" + "\uD83D\uDC8B" + cricleId + "*8*"+produceid + "\uD83D\uDC8B" + "\n" +
                 "请回复问题对应的数字：\n" +
                 "1：购买的圈子商品无法查看订单。\n" +
                 "2：登录问题。\n" +

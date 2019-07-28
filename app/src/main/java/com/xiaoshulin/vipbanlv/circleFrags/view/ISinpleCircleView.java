@@ -5,6 +5,7 @@ import com.xiaoshulin.vipbanlv.bean.CircleAdvertisementBean;
 import com.xiaoshulin.vipbanlv.bean.CricleBean;
 import com.xiaoshulin.vipbanlv.bean.CricleBuyPro;
 import com.xiaoshulin.vipbanlv.bean.CricleBuyToInterial;
+import com.xiaoshulin.vipbanlv.bean.SupportBean;
 import com.xiaoshulin.vipbanlv.bean.singleCircleBean;
 
 /**
@@ -28,4 +29,6 @@ public interface ISinpleCircleView {
     void getV_money(CheckVisionBean checkVisionBean);
 
     void payisOk(String newid);
+
+    void enjoy(SupportBean bean);
 }

@@ -155,7 +155,7 @@ public class HomeFragment extends BaseMVPFragment implements HomeView, View.OnCl
                             .build("/user/UserInformation")
                             .withInt("tag", 13)
                             .navigation();
-                } else if (position == 7) {
+                } else if (position == 8) {
                     /**小树林支付宝客服*/
 //                    jumpAlipay(ToastUtil.zhifubao());
                     ARouter.getInstance()
@@ -169,7 +169,7 @@ public class HomeFragment extends BaseMVPFragment implements HomeView, View.OnCl
                             .withString("pushwechat", "")
                             .withInt("tag", 0)
                             .navigation();
-                } else if (position == 11) {
+                } else if (position == 12) {
                     /**小树林分享*/
                     String share = "《小树林》原来还可以这样！\n" +
                             "我在这里买各种东东方便又便宜，你也可以试试！\n" +

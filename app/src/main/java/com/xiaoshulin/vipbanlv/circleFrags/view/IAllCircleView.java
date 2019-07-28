@@ -5,6 +5,7 @@ import com.xiaoshulin.vipbanlv.bean.CircleAdvertisementBean;
 import com.xiaoshulin.vipbanlv.bean.CricleBean;
 import com.xiaoshulin.vipbanlv.bean.CricleBuyPro;
 import com.xiaoshulin.vipbanlv.bean.CricleBuyToInterial;
+import com.xiaoshulin.vipbanlv.bean.SupportBean;
 
 /**
  * Created by jipeng on 2018/12/20.
@@ -32,4 +33,6 @@ public interface IAllCircleView {
  void getV_money(CheckVisionBean checkVisionBean);
 
  void payisOk(String newid);
+
+ void enjoy(SupportBean bena);
 }

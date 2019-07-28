@@ -41,11 +41,13 @@ import com.xiaoshulin.vipbanlv.bean.CricleBuyPro;
 import com.xiaoshulin.vipbanlv.bean.CricleBuyToInterial;
 import com.xiaoshulin.vipbanlv.bean.EventBusMessage;
 import com.xiaoshulin.vipbanlv.bean.JPushBean;
+import com.xiaoshulin.vipbanlv.bean.SupportBean;
 import com.xiaoshulin.vipbanlv.bean.singleCircleBean;
 import com.xiaoshulin.vipbanlv.circleFrags.adapter.CircleAdapter1;
 import com.xiaoshulin.vipbanlv.circleFrags.presenter.SinpleCirclePresenter;
 import com.xiaoshulin.vipbanlv.circleFrags.view.ISinpleCircleView;
 import com.xiaoshulin.vipbanlv.dialog.CheckUpLoadDialog;
+import com.xiaoshulin.vipbanlv.dialog.WarningDialog;
 import com.xiaoshulin.vipbanlv.utils.Constants;
 import com.xiaoshulin.vipbanlv.utils.ParsingTools;
 import com.xiaoshulin.vipbanlv.utils.SharePreferenceUtil;
@@ -59,6 +61,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
@@ -273,6 +276,7 @@ public class SinpleCricleFragment extends BaseMVPFragment implements ISinpleCirc
                         break;
                     case 7:
                         //欣赏
+                        presenter.getSupportMoney(list.get(position).getCircleid(),list.get(position).getCircleuid());
                         break;
                     case 8:
 
@@ -554,6 +558,36 @@ public class SinpleCricleFragment extends BaseMVPFragment implements ISinpleCirc
             }
         });
         checkUpLoadDialog.show();
+    }
+
+
+    WarningDialog dialogSupport;
+    @Override
+    public void enjoy(SupportBean bean) {
+        /**欣赏回调接口*/
+        String url = URLDecoder.decode(bean.getMessage());
+        if (bean.getReturncode() == 0) {
+            ToastUtil.showToast(url);
+        } else {
+            dialogSupport = new WarningDialog(getActivity(), url, "取消", "V币优充", new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    switch (view.getId()) {
+                        case R.id.tv_cancel:
+                            dialogSupport.dismiss();
+                            break;
+                        case R.id.tv_submit:
+                            ARouter.getInstance()
+                                    .build("/activity/WebActivity")
+                                    .withString("url", "http://www.vipbanlv.com/v2_test/#!/recharge")
+                                    .navigation();
+                            dialogSupport.dismiss();
+                            break;
+                    }
+                }
+            });
+            dialogSupport.show();
+        }
     }
 
     @Override

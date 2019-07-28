@@ -10,8 +10,10 @@ import com.xiaoshulin.vipbanlv.bean.CircleAdvertisementBean;
 import com.xiaoshulin.vipbanlv.bean.CricleBean;
 import com.xiaoshulin.vipbanlv.bean.CricleBuyPro;
 import com.xiaoshulin.vipbanlv.bean.CricleBuyToInterial;
+import com.xiaoshulin.vipbanlv.bean.SupportBean;
 import com.xiaoshulin.vipbanlv.bean.singleCircleBean;
 import com.xiaoshulin.vipbanlv.circleFrags.view.ISinpleCircleView;
+import com.xiaoshulin.vipbanlv.utils.MD5Util;
 import com.xiaoshulin.vipbanlv.utils.SharePreferenceUtil;
 import com.xiaoshulin.vipbanlv.utils.ToastUtil;
 import com.xiaoshulin.vipbanlv.utils.Utils;
@@ -372,5 +374,56 @@ public class SinpleCirclePresenter extends BasePresenter {
 
                     }
                 });
+    }
+
+    /**欣赏*/
+    public void getSupportMoney(String circleid,String produceid) {
+
+        int to5 = Utils.get2to5();
+        if (to5<2){
+            to5=2;
+        }
+
+        String appreciateyield=String.valueOf(to5*0.01);
+
+        String num="32413741"+appreciateyield+"E1!?397zx.cASD!@#";
+        String stringMD5 = MD5Util.getStringMD5(num);
+
+        String appreciateverify=stringMD5.substring(10,18);
+
+        String stringUId = SharePreferenceUtil.getinstance().getStringUId();
+        String stringUIdToken = SharePreferenceUtil.getinstance().getStringUIdToken();
+        String sign = Utils.getUidSign(stringUId);
+        OkHttpUtils.get()
+                .url(ApiUtils.URL)
+                .addParams("m", "user")
+                .addParams("a", "acappreciate")
+                .addParams("uid", stringUId)
+                .addParams("machine_type", String.valueOf(1))
+                .addParams("sign", sign)
+                .addParams("version", Utils.getLocalVersionName())
+                .addParams("uidtoken", stringUIdToken)
+                .addParams("appreciateid", circleid)
+                .addParams("appreciateuid", produceid)
+                .addParams("appreciatetype", "1")
+                .addParams("appreciateyield", appreciateyield)
+                .addParams("appreciateverify", appreciateverify)
+                .build()
+                .execute(new StringCallback() {
+                    @Override
+                    public void onError(Call call, Exception e, int id) {
+                        Log.e(TAG, "----赏钱结果---onError: " + e.getMessage() + "       " + call.request());
+                    }
+
+                    @Override
+                    public void onResponse(String response, int id) {
+                        Log.e(TAG, "-----赏钱结果-----onResponse: "+response);
+                        Gson gson = new Gson();
+                        SupportBean registerBean = gson.fromJson(response, SupportBean.class);
+                        iSinpleCircleView.enjoy(registerBean);
+
+                    }
+                });
+
     }
 }

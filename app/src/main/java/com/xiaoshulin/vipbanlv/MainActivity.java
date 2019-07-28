@@ -1045,6 +1045,10 @@ public class MainActivity extends BaseMVPActivity implements MainView, BottomNav
             mDanmakuView.setVisibility(View.VISIBLE);
             ll_danmaku.setVisibility(View.VISIBLE);
             text_start.setVisibility(View.VISIBLE);
+            if (mDanmakuView != null && mDanmakuView.isPrepared() && mDanmakuView.isPaused()) {
+                mDanmakuView.resume();
+            }
+
         } else {
             mDanmakuView.stop();
             mDanmakuView.setVisibility(View.GONE);

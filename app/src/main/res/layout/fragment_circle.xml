@@ -43,6 +43,7 @@
                 android:textStyle="bold" />
 
             <Button
+                android:visibility="invisible"
                 android:layout_width="60dp"
                 android:layout_height="35dp"
                 android:layout_gravity="center"

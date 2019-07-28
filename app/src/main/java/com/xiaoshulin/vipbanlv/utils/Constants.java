@@ -36,7 +36,7 @@ public class Constants {
                                                 CostomFieldBean costomFieldBean = gson.fromJson(customfield, CostomFieldBean.class);
                                                 ARouter.getInstance()
                                                         .build("/activity/ChatMessageActivity")
-                                                        .withString("titleName", costomFieldBean.getNickName())
+                                                        .withString("titleName", costomFieldBean.getNickName())//costomFieldBean.getNickName()
                                                         .withString("messageSectionid", costomFieldBean.getMessageSection())
                                                         .navigation();
                                             } else {
