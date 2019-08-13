@@ -5,7 +5,7 @@ apply plugin: 'com.alibaba.arouter'
 
 def _versionCode = 1
 
-def _versionName = '1.2.0'
+def _versionName = '1.5.0'
 
 
 android {
@@ -101,6 +101,8 @@ dependencies {
     compile 'com.github.ctiao:ndkbitmap-armv7a:0.9.21'
     compile 'com.github.ctiao:ndkbitmap-armv5:0.9.21'
     compile 'com.github.ctiao:ndkbitmap-x86:0.9.21'
+
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
 
 
 }

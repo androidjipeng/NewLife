@@ -18,12 +18,9 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 
-import com.alibaba.android.arouter.launcher.ARouter;
-import com.bumptech.glide.load.resource.bitmap.BitmapEncoder;
-import com.bumptech.glide.util.LogTime;
 import com.google.gson.Gson;
 import com.xiaoshulin.vipbanlv.ApiUtils.ApiUtils;
-import com.xiaoshulin.vipbanlv.activity.OrderInformationActivity;
+
 import com.xiaoshulin.vipbanlv.bean.CheckVisionBean;
 import com.xiaoshulin.vipbanlv.bean.LocalDataBean;
 import com.xiaoshulin.vipbanlv.dialog.CheckUpLoadDialog;
@@ -32,6 +29,7 @@ import com.xiaoshulin.vipbanlv.dialog.WarningDialog;
 import com.xiaoshulin.vipbanlv.utils.SharePreferenceUtil;
 import com.xiaoshulin.vipbanlv.utils.ToastUtil;
 import com.xiaoshulin.vipbanlv.utils.Utils;
+
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -44,6 +42,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.List;
 
 import okhttp3.Call;
 
@@ -289,6 +288,8 @@ public class SpalshActivity extends AppCompatActivity {
 
     public void verifyStoragePermissions(Activity activity) {
 
+
+
         try {
             //检测是否有写的权限
             int permission = ActivityCompat.checkSelfPermission(activity, "android.permission.WRITE_EXTERNAL_STORAGE");
@@ -324,7 +325,7 @@ public class SpalshActivity extends AppCompatActivity {
         StringBuilder content = new StringBuilder();
         try {
 
-            in = new FileInputStream(file.getAbsolutePath());//文件名
+            in = new FileInputStream(file.getAbsoluteFile());//文件名
             InputStreamReader input = new InputStreamReader(in, "UTF-8");
             reader = new BufferedReader(input);
             String line = "";
