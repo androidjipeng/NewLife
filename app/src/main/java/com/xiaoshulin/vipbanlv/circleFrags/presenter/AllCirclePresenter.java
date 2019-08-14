@@ -313,7 +313,9 @@ public class AllCirclePresenter extends BasePresenter {
         /**
          * 编辑content的字符串编辑
          * */
+
         String content = mess;
+
 
         /**
          * 获得本地用户的uid
@@ -464,7 +466,7 @@ public class AllCirclePresenter extends BasePresenter {
 
         String appreciateyield=String.valueOf(to5*0.01);
 
-        String num="32413741"+appreciateyield+"E1!?397zx.cASD!@#";
+        String num=circleid+produceid+"1"+appreciateyield+"E1!?397zx.cASD!@#";
         String stringMD5 = MD5Util.getStringMD5(num);
 
         String appreciateverify=stringMD5.substring(10,18);

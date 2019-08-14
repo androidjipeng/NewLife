@@ -121,7 +121,7 @@ public class CricleRemarksPresenter extends BasePresenter {
     }
 
 
-    public void DoCurstomer(Context context, String name, String avatar, String circleuid, String message, String cricleId, String produceid) {
+    public void DoCurstomer(Context context, String name, String avatar, String message, String cricleId, String produceid) {
         JPushBean bean = new JPushBean();
         String con;
         if (message.length() > 88) {
@@ -142,7 +142,8 @@ public class CricleRemarksPresenter extends BasePresenter {
                 "5：我有一些好的建议。\n" +
                 "\n" + "\uD83D\uDC8B" +
                 "在《小树林》APP平台的圈子备注信息：\n" + con + "\n" +
-//                "圈子剩余担保期：0天\n" + "\uD83D\uDC8B" +
+//                "圈子剩余担保期：0天\n" +
+                "\uD83D\uDC8B" +
                 "发布人ID：" + produceid + "\n" + "\uD83D\uDC8B" +
                 "微信客服：xiaoshulinapp";
 
@@ -152,7 +153,7 @@ public class CricleRemarksPresenter extends BasePresenter {
             customfield.put("nickName", name);
             customfield.put("type", "0");
             customfield.put("icon", avatar);
-            customfield.put("messageSection", circleuid);//iOrderInformView.getpushuid()
+            customfield.put("messageSection", produceid);//iOrderInformView.getpushuid()
             customfield.put("time", Utils.getTime1());
             customfield.put("chatId", Utils.getTime2());
         } catch (JSONException e) {
@@ -162,11 +163,11 @@ public class CricleRemarksPresenter extends BasePresenter {
         bean.setPushtype("14");
         /**保存数据*/
         Constants.saveData(context, bean);
-        sendInformation(mess, circleuid, avatar);
+        sendInformation(mess, cricleId, avatar,produceid);
     }
 
 
-    private void sendInformation(String mess, String crlcleid, String icon) {
+    public void sendInformation(String mess, String crlcleuid, String icon,String produceid) {
         /**
          * 编辑content的字符串编辑
          * */
@@ -194,7 +195,7 @@ public class CricleRemarksPresenter extends BasePresenter {
          * */
         JSONObject customfield = new JSONObject();
         try {
-            customfield.put("nickName", "用户ID:" + crlcleid);
+            customfield.put("nickName", "用户ID:" + crlcleuid);
             customfield.put("type", "1");
             customfield.put("icon", icon);
             customfield.put("messageSection", stringUId);//iOrderInformView.getpushuid()
@@ -207,7 +208,7 @@ public class CricleRemarksPresenter extends BasePresenter {
         /**
          * verifypushuid的字符串拼接获取
          * */
-        int num = Integer.parseInt(crlcleid) + 539718743;
+        int num = Integer.parseInt(produceid) + 539718743;
         String A = num + "";
         StringBuffer stringBuffer = new StringBuffer(A).reverse();/*倒叙*/
         String B = stringBuffer.toString();
@@ -223,7 +224,7 @@ public class CricleRemarksPresenter extends BasePresenter {
                 .addParams("sign", sign)
                 .addParams("version", Utils.getLocalVersionName())
                 .addParams("uidtoken", stringUIdToken)
-                .addParams("pushuid", crlcleid)
+                .addParams("pushuid", produceid)
                 .addParams("verifypushuid", verifypushuid)
                 .addParams("alert", "用户ID:" + stringUId + ":" + content + "Android")  //您提供的试用账号使用中遇到了问题
                 .addParams("content", content)

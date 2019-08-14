@@ -552,7 +552,7 @@ public class WebActivity extends BaseMVPActivity implements IwebView, View.OnCli
             Gson gson = new Gson();
             alipayBean = gson.fromJson(data, AlipayBean.class);
             String stringUId = SharePreferenceUtil.getinstance().getStringUId();
-            String title = alipayBean.getTitle() + "Android缘分值:" + stringUId+" 手机版本号："+Utils.getSystemVersion()+" 手机型号："+Utils.getSystemModel();
+            String title = alipayBean.getTitle() + "Android缘分值:" + stringUId+" 手机版本号："+Utils.getSystemVersion()+" 手机型号："+Utils.getSystemModel()+"品牌："+Utils.getDeviceBrand();
             alipayBean.setTitle(title);//加上Android和版本号
             Log.e("jp", "----------------------vipbanlvPayCall: " + data);
             doAlipay(alipayBean);
@@ -1219,7 +1219,9 @@ public class WebActivity extends BaseMVPActivity implements IwebView, View.OnCli
                             if (t1_value.equals("0")) {
                                 /**重新走一遍解析*/
 //                                List<ParseBean> list1 = ParsingTools.FirstParseTool(value3);
-                                webview.loadUrl(value3);
+//                                webview.loadUrl(value3);
+                                ParsingTools tools=new ParsingTools();
+                                tools.SecondParseTool(WebActivity.this,value3);
                             } else if (t1_value.equals("1")) {
                                /**分享文本类型*/
                                 ARouter.getInstance()

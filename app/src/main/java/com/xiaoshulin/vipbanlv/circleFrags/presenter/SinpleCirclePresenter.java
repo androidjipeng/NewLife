@@ -235,6 +235,7 @@ public class SinpleCirclePresenter extends BasePresenter {
         /**
          * 编辑content的字符串编辑
          * */
+
         String content = mess;
 
         /**
@@ -386,7 +387,7 @@ public class SinpleCirclePresenter extends BasePresenter {
 
         String appreciateyield=String.valueOf(to5*0.01);
 
-        String num="32413741"+appreciateyield+"E1!?397zx.cASD!@#";
+        String num=circleid+produceid+appreciateyield+"E1!?397zx.cASD!@#";
         String stringMD5 = MD5Util.getStringMD5(num);
 
         String appreciateverify=stringMD5.substring(10,18);

@@ -12,6 +12,11 @@ public class EventBusMessage {
         this.message = message;
     }
 
+    public EventBusMessage(int type) {
+        this.type = type;
+    }
+
+
     public String getMessage1() {
         return message1;
     }
@@ -20,9 +25,7 @@ public class EventBusMessage {
         this.message1 = message1;
     }
 
-    public EventBusMessage(int type) {
-        this.type = type;
-    }
+
 
     public int getType() {
         return type;

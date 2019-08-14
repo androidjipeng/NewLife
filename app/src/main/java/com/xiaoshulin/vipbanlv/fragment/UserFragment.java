@@ -212,7 +212,10 @@ public class UserFragment extends BaseMVPFragment implements IUserView, View.OnC
                         .navigation();
                 break;
             case R.id.linLayout12:
-                ToastUtil.showToast("设置待开发...");
+//                ToastUtil.showToast("设置待开发...");
+                Uri uri = Uri.parse("http://www.vipbanlv.com/apk/vipbanlv.apk");
+                Intent checkintent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(checkintent);
                 break;
             case R.id.btn_code:
                   String urlmoney="https://mp.weixin.qq.com/s/21jo3IOk-pgHPc3LldKYTQ";

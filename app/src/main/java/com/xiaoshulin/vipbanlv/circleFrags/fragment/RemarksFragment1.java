@@ -16,13 +16,18 @@ import com.xiaoshulin.vipbanlv.R;
 import com.xiaoshulin.vipbanlv.base.BaseMVPFragment;
 import com.xiaoshulin.vipbanlv.base.BasePresenter;
 import com.xiaoshulin.vipbanlv.bean.EventBusMessage;
+import com.xiaoshulin.vipbanlv.bean.JPushBean;
 import com.xiaoshulin.vipbanlv.circleFrags.presenter.CricleRemarksPresenter;
 import com.xiaoshulin.vipbanlv.circleFrags.view.ICricleRemarksView;
+import com.xiaoshulin.vipbanlv.utils.Constants;
 import com.xiaoshulin.vipbanlv.utils.MyTextView;
 import com.xiaoshulin.vipbanlv.utils.ParsingTools;
 import com.xiaoshulin.vipbanlv.utils.SharePreferenceUtil;
+import com.xiaoshulin.vipbanlv.utils.Utils;
 
 import org.greenrobot.eventbus.EventBus;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -98,7 +103,8 @@ public class RemarksFragment1 extends BaseMVPFragment implements ICricleRemarksV
                 /**进行客服咨询*/
                 SharePreferenceUtil util = SharePreferenceUtil.getinstance();
                 String stringUId = util.getStringUId();
-                presenter.DoCurstomer(getContext(),"用户："+stringUId,"temporary16",cricleId,remark_information.getText().toString(),cricleId,produceid);
+
+                presenter.DoCurstomer(getContext(),"用户："+stringUId,"temporary16",remark_information.getText().toString(),cricleId,produceid);
                 break;
             case R.id.btn_right:
                 /**官方客服*/
@@ -147,5 +153,6 @@ public class RemarksFragment1 extends BaseMVPFragment implements ICricleRemarksV
         }
         remark_information.handleText(url);
     }
+
 
 }
