@@ -55,10 +55,15 @@ public class UserFragment extends BaseMVPFragment implements IUserView, View.OnC
         return fragment;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        presenter.getUserInfo();
+    }
 
     @Override
     protected void initData() {
-        presenter.getUserInfo();
+
     }
 
     @Override

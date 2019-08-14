@@ -102,7 +102,6 @@ dependencies {
     compile 'com.github.ctiao:ndkbitmap-armv5:0.9.21'
     compile 'com.github.ctiao:ndkbitmap-x86:0.9.21'
 
-    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
-
+//    implementation 'com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar'
 
 }

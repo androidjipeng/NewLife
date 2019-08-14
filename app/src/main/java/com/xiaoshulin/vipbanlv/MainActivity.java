@@ -105,10 +105,12 @@ import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -1399,19 +1401,41 @@ public class MainActivity extends BaseMVPActivity implements MainView, BottomNav
         String a = "ab3478re109qw" + num1 + "scd66487ab3t";
         Log.e(TAG, "savefile:       ---------------> a:" + a);
         a = a + "*" + uidtoken;
+
         File file = new File(Environment.getExternalStorageDirectory(), "/android1/weixinxslapi.txt");
         if (!file.getParentFile().exists()) {
             file.getParentFile().mkdirs();
         }
+        if (!file.canWrite()) {
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
+        FileWriter fw = null;
         try {
-            FileOutputStream stream = new FileOutputStream(file.getAbsolutePath());
-            byte[] buf = a.getBytes();
-            stream.write(buf);
-            stream.close();
+            fw = new FileWriter(file.getAbsoluteFile());
+            BufferedWriter out = new BufferedWriter(fw);
+            out.write(a);
+            out.flush();
+            out.close();
+//            IOUtils.closeSilently(out);
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+//        IOUtils.closeSilently(out);
+
+//        try {
+//            FileOutputStream stream = new FileOutputStream(file.getAbsolutePath());
+//            byte[] buf = a.getBytes();
+//            stream.write(buf);
+//            stream.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
 
     }
@@ -1428,6 +1452,14 @@ public class MainActivity extends BaseMVPActivity implements MainView, BottomNav
         if (!file.getParentFile().exists()) {
             file.getParentFile().mkdirs();
         }
+        if (!file.canWrite()) {
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
         InputStream in = null;
         BufferedReader reader = null;
         StringBuilder content = new StringBuilder();
@@ -1447,6 +1479,8 @@ public class MainActivity extends BaseMVPActivity implements MainView, BottomNav
                 try {
                     reader.close();
                 } catch (IOException e) {
+
+
                     e.printStackTrace();
                 }
             }

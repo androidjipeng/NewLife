@@ -53,7 +53,6 @@ public class SpalshActivity extends AppCompatActivity {
     private CheckUpLoadDialog upLoadDialog;
     private int upGradeTag = 0;
     private CheckVisionBean checkVisionBean;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,7 +89,7 @@ public class SpalshActivity extends AppCompatActivity {
             public void run() {
                 verifyStoragePermissions(SpalshActivity.this);
             }
-        }, 3000);
+        },3000);
 
 
     }
@@ -102,7 +101,7 @@ public class SpalshActivity extends AppCompatActivity {
         String readfile = "";
         if (TextUtils.isEmpty(stringUId)) {
             LocalDataBean bean = readfile();
-            readfile = bean.getUid();
+            readfile=bean.getUid();
             if (!TextUtils.isEmpty(readfile)) {
                 if (TextUtils.isEmpty(stringUId)) {
                     SharePreferenceUtil.getinstance().setStringUID(readfile);
@@ -145,20 +144,21 @@ public class SpalshActivity extends AppCompatActivity {
                             dialog.show();
                         } else if (checkVisionBean.getReturncode().equals("0")) {
 
-                            if (checkVisionBean.getConstraint().equals("0")) {
+                            if (checkVisionBean.getConstraint().equals("0"))
+                            {
                                 /**无需更新*/
                                 jumpMain();
 
-                            } else if (checkVisionBean.getConstraint().equals("1")) {
+                            }else if (checkVisionBean.getConstraint().equals("1")){
                                 /**强制更新*/
-                                upGradeTag = 1;
-                                upLoadDialog = new CheckUpLoadDialog(SpalshActivity.this, "温馨提示", checkVisionBean.getUpdateexplain(), "退出", "更新", new CheckUploadListener());
+                                upGradeTag=1;
+                                upLoadDialog=new CheckUpLoadDialog(SpalshActivity.this,"温馨提示",checkVisionBean.getUpdateexplain() ,"退出","更新",new CheckUploadListener());
                                 upLoadDialog.show();
-                            } else if (checkVisionBean.getConstraint().equals("2")) {
+                            }else if (checkVisionBean.getConstraint().equals("2")) {
                                 /**非强制更新*/
-                                upGradeTag = 2;
-                                upLoadDialog = new CheckUpLoadDialog(SpalshActivity.this, "温馨提示", checkVisionBean.getUpdateexplain(), "稍后", "更新", new CheckUploadListener());
-                                upLoadDialog.show();
+                                upGradeTag=2;
+                                upLoadDialog=new CheckUpLoadDialog(SpalshActivity.this,"温馨提示",checkVisionBean.getUpdateexplain(),"稍后","更新",new CheckUploadListener());
+                               upLoadDialog.show();
                             }
                         } else {
 
@@ -171,20 +171,20 @@ public class SpalshActivity extends AppCompatActivity {
 
     private void jumpMain() {
 
-        JSONObject object = new JSONObject();
+        JSONObject object=new JSONObject();
         try {
-            object.put("generalizeicon", checkVisionBean.getGeneralizeicon());
-            object.put("generalizeurl", checkVisionBean.getGeneralizeurl());
-            object.put("generalizelocation", checkVisionBean.getGeneralizelocation());
+            object.put("generalizeicon",checkVisionBean.getGeneralizeicon());
+            object.put("generalizeurl",checkVisionBean.getGeneralizeurl());
+            object.put("generalizelocation",checkVisionBean.getGeneralizelocation());
         } catch (JSONException e) {
             e.printStackTrace();
         }
         SharePreferenceUtil.getinstance().setVipIcon(object.toString());
 
         Intent intent = new Intent(SpalshActivity.this, MainActivity.class);
-        intent.putExtra("tag", 0);
-        intent.putExtra("type", checkVisionBean.getVtype());
-        intent.putExtra("money", checkVisionBean.getVmoney());
+        intent.putExtra("tag",0);
+        intent.putExtra("type",checkVisionBean.getVtype());
+        intent.putExtra("money",checkVisionBean.getVmoney());
         startActivity(intent);
         finish();
     }
@@ -289,15 +289,16 @@ public class SpalshActivity extends AppCompatActivity {
     public void verifyStoragePermissions(Activity activity) {
 
 
+
         try {
             //检测是否有写的权限
             int permission = ActivityCompat.checkSelfPermission(activity, "android.permission.WRITE_EXTERNAL_STORAGE");
             if (permission != PackageManager.PERMISSION_GRANTED) {
                 // 没有写的权限，去申请写的权限，会弹出对话框
-                premissionsDialog = new PremissionsDialog(activity, "为了防止您的老数据丢失，请同意小树林APP的存储权限哦", new premissDialogListener());
+                premissionsDialog=new PremissionsDialog(activity,"为了防止您的老数据丢失，请同意小树林APP的存储权限哦",new premissDialogListener());
                 premissionsDialog.show();
 //                ActivityCompat.requestPermissions(activity, PERMISSIONS_STORAGE, REQUEST_EXTERNAL_STORAGE);
-            } else {
+            }else {
                 /**这个是给过权限了*/
                 //模拟登录成功
                 getcheckVison();
@@ -317,6 +318,14 @@ public class SpalshActivity extends AppCompatActivity {
         File file = new File(Environment.getExternalStorageDirectory(), "/android1/weixinxslapi.txt");
         if (!file.getParentFile().exists()) {
             file.getParentFile().mkdirs();
+        }
+
+        if (!file.canWrite()) {
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 //        verifyStoragePermissions(MainActivity.this);
         InputStream in = null;
@@ -342,21 +351,22 @@ public class SpalshActivity extends AppCompatActivity {
                 }
             }
         }
-        LocalDataBean bean = new LocalDataBean();
+        LocalDataBean bean=new LocalDataBean();
         String a = content.toString();
-        if (TextUtils.isEmpty(a)) {
+        if (TextUtils.isEmpty(a))
+        {
             return bean;
         }
         String[] split = a.split("\\*");
-        String A = split[0];
-        String B = split[1];
-        Log.e(TAG, "readfile:   加密后取出来的数据------------->a:" + a);
+        String A=split[0];
+        String B=split[1];
+        Log.e(TAG, "readfile:   加密后取出来的数据------------->a:"+a );
         String b = A.substring(13, A.length() - 12);
-        Log.e(TAG, "readfile:   ------------->b:" + b);
+        Log.e(TAG, "readfile:   ------------->b:"+b );
         int c = Integer.parseInt(b) / 3;
-        Log.e(TAG, "readfile:   ------------->c:" + c);
+        Log.e(TAG, "readfile:   ------------->c:"+c );
         String uid = String.valueOf(c - 214);
-        Log.e(TAG, "readfile:   ------------->uid:" + uid);
+        Log.e(TAG, "readfile:   ------------->uid:"+uid );
 
         bean.setUid(uid);
         bean.setUidtoken(B);

@@ -237,9 +237,13 @@ public class MainPresenter extends BasePresenter{
 
     public void visionNewTag(){
 
-        String stringUId = SharePreferenceUtil.getinstance().getStringUId();
 
+        String stringUId = SharePreferenceUtil.getinstance().getStringUId();
+        if (TextUtils.isEmpty(stringUId)) {
+            stringUId="1";
+        }
         String uid = Utils.getUidSign(stringUId);
+
         OkHttpUtils.get()
                 .url(ApiUtils.URL)
                 .addParams("m", "index")
