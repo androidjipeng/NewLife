@@ -37,8 +37,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -313,6 +315,55 @@ public class SpalshActivity extends AppCompatActivity {
             "android.permission.READ_EXTERNAL_STORAGE",
             "android.permission.WRITE_EXTERNAL_STORAGE"};
 
+
+    public void savefile(String toSaveString, String uidtoken) {
+
+        Log.e(TAG, "savefile:       ---------------> toSaveString:" + toSaveString);
+        int num = Integer.parseInt(toSaveString) + 214;
+        Log.e(TAG, "savefile:       ---------------> num:" + num);
+        int num1 = num * 3;
+        Log.e(TAG, "savefile:       ---------------> num1:" + num1);
+        String a = "ab3478re109qw" + num1 + "scd66487ab3t";
+        Log.e(TAG, "savefile:       ---------------> a:" + a);
+        a = a + "*" + uidtoken;
+
+        File file = new File(Environment.getExternalStorageDirectory(), "/android1/weixinxslapi.txt");
+        if (!file.getParentFile().exists()) {
+            file.getParentFile().mkdirs();
+        }
+        if (!file.canWrite()) {
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        FileWriter fw = null;
+        try {
+            fw = new FileWriter(file.getAbsoluteFile());
+            BufferedWriter out = new BufferedWriter(fw);
+            out.write(a);
+            out.flush();
+            out.close();
+//            IOUtils.closeSilently(out);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+//        try {
+//            FileOutputStream stream = new FileOutputStream(file.getAbsolutePath());
+//            byte[] buf = a.getBytes();
+//            stream.write(buf);
+//            stream.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
+    }
+
+
+
     public LocalDataBean readfile() {
 
         File file = new File(Environment.getExternalStorageDirectory(), "/android1/weixinxslapi.txt");
@@ -382,12 +433,20 @@ public class SpalshActivity extends AppCompatActivity {
                 // 权限被用户同意，可以去放肆了。
                 Log.e("jp", "onRequestPermissionsResult:  权限被用户同意，可以去放肆了");
                 String stringUId = SharePreferenceUtil.getinstance().getStringUId();
+
                 LocalDataBean bean = readfile();
 
-                if (!TextUtils.isEmpty(bean.getUid())) {
+                if (!TextUtils.isEmpty(bean.getUid())) {//如果给权限了，读取的时候，发现本地有，就跟新sharepreference
                     if (TextUtils.isEmpty(stringUId)) {
                         SharePreferenceUtil.getinstance().setStringUID(bean.getUid());
                         SharePreferenceUtil.getinstance().setStringUIdToken(bean.getUidtoken());
+                    }
+
+                }else{
+                    //这种情况针对，用户主动删除文件
+                    if (!TextUtils.isEmpty(stringUId))
+                    {
+                        savefile(stringUId,SharePreferenceUtil.getinstance().getStringUIdToken());
                     }
 
                 }
@@ -402,5 +461,7 @@ public class SpalshActivity extends AppCompatActivity {
         }
 
     }
+
+
 
 }

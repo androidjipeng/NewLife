@@ -104,7 +104,7 @@ public class RemarksFragment1 extends BaseMVPFragment implements ICricleRemarksV
                 SharePreferenceUtil util = SharePreferenceUtil.getinstance();
                 String stringUId = util.getStringUId();
 
-                presenter.DoCurstomer(getContext(),"用户："+stringUId,"temporary16",remark_information.getText().toString(),cricleId,produceid);
+                presenter.DoCurstomer(getContext(),"用户："+produceid,"temporary16",remark_information.getText().toString(),cricleId,produceid);
                 break;
             case R.id.btn_right:
                 /**官方客服*/

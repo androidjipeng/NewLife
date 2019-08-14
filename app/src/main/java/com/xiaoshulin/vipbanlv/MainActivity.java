@@ -1426,8 +1426,6 @@ public class MainActivity extends BaseMVPActivity implements MainView, BottomNav
             e.printStackTrace();
         }
 
-//        IOUtils.closeSilently(out);
-
 //        try {
 //            FileOutputStream stream = new FileOutputStream(file.getAbsolutePath());
 //            byte[] buf = a.getBytes();
@@ -1436,7 +1434,6 @@ public class MainActivity extends BaseMVPActivity implements MainView, BottomNav
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
-
 
     }
 
