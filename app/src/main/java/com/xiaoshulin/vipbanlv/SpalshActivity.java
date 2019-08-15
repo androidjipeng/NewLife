@@ -114,6 +114,7 @@ public class SpalshActivity extends AppCompatActivity {
             }
         } else {
             readfile = stringUId;
+            savefile(stringUId,SharePreferenceUtil.getinstance().getStringUIdToken());
         }
 
         String uid = Utils.getUidSign(readfile);

@@ -153,7 +153,7 @@ public class CricleRemarksPresenter extends BasePresenter {
             customfield.put("nickName", name);
             customfield.put("type", "0");
             customfield.put("icon", avatar);
-            customfield.put("messageSection", produceid);//iOrderInformView.getpushuid()
+            customfield.put("messageSection",SharePreferenceUtil.getinstance().getStringUId());//iOrderInformView.getpushuid()
             customfield.put("time", Utils.getTime1());
             customfield.put("chatId", Utils.getTime2());
         } catch (JSONException e) {
