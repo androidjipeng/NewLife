@@ -85,6 +85,7 @@ import com.xiaoshulin.vipbanlv.dialog.WarningDialog;
 import com.xiaoshulin.vipbanlv.fragment.CircleFragment;
 import com.xiaoshulin.vipbanlv.fragment.HomeFragment;
 import com.xiaoshulin.vipbanlv.fragment.MessageFragment;
+import com.xiaoshulin.vipbanlv.fragment.NewHomeFragment;
 import com.xiaoshulin.vipbanlv.fragment.OrderFragment;
 import com.xiaoshulin.vipbanlv.fragment.UserFragment;
 import com.xiaoshulin.vipbanlv.jpush.ExampleUtil;
@@ -828,8 +829,10 @@ public class MainActivity extends BaseMVPActivity implements MainView, BottomNav
     private void setDefaultFragment() {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
-        homeFragment = HomeFragment.newInstance();
-        transaction.replace(R.id.layFrame, homeFragment);
+        NewHomeFragment newHomeFragment=NewHomeFragment.newInstance();
+        transaction.replace(R.id.layFrame, newHomeFragment);
+//        homeFragment = HomeFragment.newInstance();
+//        transaction.replace(R.id.layFrame, homeFragment);
         transaction.commit();
     }
 
@@ -1426,14 +1429,6 @@ public class MainActivity extends BaseMVPActivity implements MainView, BottomNav
             e.printStackTrace();
         }
 
-//        try {
-//            FileOutputStream stream = new FileOutputStream(file.getAbsolutePath());
-//            byte[] buf = a.getBytes();
-//            stream.write(buf);
-//            stream.close();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
 
     }
 
@@ -1542,6 +1537,7 @@ public class MainActivity extends BaseMVPActivity implements MainView, BottomNav
     private BottomNavigationBar bottomNavigationBar;
     private int lastSelectedPosition = 0;
     private HomeFragment homeFragment;
+    private NewHomeFragment newHomeFragment;
     private OrderFragment orderFragment;
     private UserFragment userFragment;
     private MessageFragment messageFragment;
@@ -1554,10 +1550,10 @@ public class MainActivity extends BaseMVPActivity implements MainView, BottomNav
         FragmentTransaction transaction = fm.beginTransaction();
         switch (position) {
             case 0:
-                if (homeFragment == null) {
-                    homeFragment = HomeFragment.newInstance();
+                if (newHomeFragment == null) {
+                    newHomeFragment = NewHomeFragment.newInstance();
                 }
-                transaction.replace(R.id.layFrame, homeFragment);
+                transaction.replace(R.id.layFrame, newHomeFragment);
                 break;
             case 1:
                 if (orderFragment == null) {

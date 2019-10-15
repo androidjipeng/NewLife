@@ -218,6 +218,12 @@ public class Utils {
         return time;
     }
 
+    public static String getCurrentTime()
+    {
+        long currentTime = System.currentTimeMillis();
+
+        return currentTime+"";
+    }
 
 
     /**
