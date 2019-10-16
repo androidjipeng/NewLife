@@ -1,4 +1,4 @@
-package com.xiaoshulin.vipbanlv.fragment.adapter;
+package com.xiaoshulin.vipbanlv.NewHomefrags.adapter;
 
 import android.app.Activity;
 import android.support.annotation.NonNull;
@@ -9,10 +9,11 @@ import android.view.ViewGroup;
 
 import com.xiaoshulin.vipbanlv.R;
 import com.xiaoshulin.vipbanlv.base.BaseViewHolder;
-import com.xiaoshulin.vipbanlv.fragment.holder.NewHomeFragmentAdapterTopItemHolder;
-import com.xiaoshulin.vipbanlv.fragment.holder.NewHomeFragmentAdaptersFourthItemHolder;
-import com.xiaoshulin.vipbanlv.fragment.holder.NewHomeFragmentAdaptersSecondItemHolder;
-import com.xiaoshulin.vipbanlv.fragment.holder.NewHomeFragmentAdaptersThirdItemHolder;
+import com.xiaoshulin.vipbanlv.bean.NewHomeFragmentBean;
+import com.xiaoshulin.vipbanlv.NewHomefrags.holder.NewHomeFragmentAdapterTopItemHolder;
+import com.xiaoshulin.vipbanlv.NewHomefrags.holder.NewHomeFragmentAdaptersFourthItemHolder;
+import com.xiaoshulin.vipbanlv.NewHomefrags.holder.NewHomeFragmentAdaptersSecondItemHolder;
+import com.xiaoshulin.vipbanlv.NewHomefrags.holder.NewHomeFragmentAdaptersThirdItemHolder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ import java.util.List;
  */
 public class NewHomeFragmentAdapter extends RecyclerView.Adapter<BaseViewHolder>{
 
-    List<String> list=new ArrayList<>();
+    List<NewHomeFragmentBean> list=new ArrayList<>();
 
     Activity activity;
     public NewHomeFragmentAdapter(Activity activity) {
@@ -77,7 +78,7 @@ public class NewHomeFragmentAdapter extends RecyclerView.Adapter<BaseViewHolder>
     }
 
 
-    public List<String> getList() {
+    public List<NewHomeFragmentBean> getList() {
         return list;
     }
 

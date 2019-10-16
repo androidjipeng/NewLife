@@ -102,6 +102,10 @@ dependencies {
     implementation 'com.github.ctiao:ndkbitmap-armv5:0.9.21'
     implementation 'com.github.ctiao:ndkbitmap-x86:0.9.21'
 
+    //轮播
+    implementation('com.alibaba.android:ultraviewpager:1.0.7.7@aar') {
+        transitive = true
+    }
 
 
 }

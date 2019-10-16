@@ -1,4 +1,4 @@
-package com.xiaoshulin.vipbanlv.fragment.holder;
+package com.xiaoshulin.vipbanlv.NewHomefrags.holder;
 
 import android.app.Activity;
 import android.support.annotation.NonNull;

@@ -5,6 +5,7 @@ import android.util.Log;
 import com.google.gson.Gson;
 import com.xiaoshulin.vipbanlv.ApiUtils.ApiUtils;
 import com.xiaoshulin.vipbanlv.base.BasePresenter;
+import com.xiaoshulin.vipbanlv.bean.NewHomeFragmentBean;
 import com.xiaoshulin.vipbanlv.bean.danMuBean;
 import com.xiaoshulin.vipbanlv.utils.SharePreferenceUtil;
 import com.xiaoshulin.vipbanlv.utils.Utils;
@@ -54,8 +55,8 @@ public class NewHomeFragmentPresenter extends BasePresenter {
                     public void onResponse(String response, int id) {
                         Log.e(TAG, "新首页----------------onResponse: " + response);
                         Gson gson = new Gson();
-//                        danMuBean bean = gson.fromJson(response, danMuBean.class);
-//                        mainView.getDanmuData(bean);
+                        NewHomeFragmentBean bean=gson.fromJson(response, NewHomeFragmentBean.class);
+                        iNewHomeFragmentView.getNewHomeFragmentData(bean);
                     }
                 });
 

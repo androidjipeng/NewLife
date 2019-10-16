@@ -1,21 +1,19 @@
 package com.xiaoshulin.vipbanlv.fragment;
 
 
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.xiaoshulin.vipbanlv.R;
 import com.xiaoshulin.vipbanlv.base.BaseMVPFragment;
 import com.xiaoshulin.vipbanlv.base.BasePresenter;
-import com.xiaoshulin.vipbanlv.fragment.adapter.NewHomeFragmentAdapter;
+import com.xiaoshulin.vipbanlv.bean.NewHomeFragmentBean;
+import com.xiaoshulin.vipbanlv.NewHomefrags.adapter.NewHomeFragmentAdapter;
 import com.xiaoshulin.vipbanlv.presenter.NewHomeFragmentPresenter;
 import com.xiaoshulin.vipbanlv.view.INewHomeFragmentView;
+
+import java.util.List;
 
 /**
  * 新的首页UI页面
@@ -40,11 +38,9 @@ public class NewHomeFragment extends BaseMVPFragment implements INewHomeFragment
 
     @Override
     protected void initData() {
+        //获取首页数据
         presenter.getHomeData();
-        for (int i = 0; i <4 ; i++) {
-            newHomeFragmentAdapter.getList().add("");
-        }
-        newHomeFragmentAdapter.notifyDataSetChanged();
+
     }
 
     @Override
@@ -66,5 +62,40 @@ public class NewHomeFragment extends BaseMVPFragment implements INewHomeFragment
     public BasePresenter initPresenter() {
         presenter = new NewHomeFragmentPresenter(this);
         return presenter;
+    }
+
+    @Override
+    public void getNewHomeFragmentData(NewHomeFragmentBean bean) {
+        //首页接口数据返回
+
+        showHomeUI(bean);
+
+    }
+
+    private void showHomeUI(NewHomeFragmentBean bean) {
+        List<NewHomeFragmentBean> list = newHomeFragmentAdapter.getList();
+
+        NewHomeFragmentBean firstbean=new NewHomeFragmentBean();
+        firstbean.setToplist(bean.getToplist());
+        firstbean.setToplisttime(bean.getToplisttime());
+        list.add(firstbean);
+
+        NewHomeFragmentBean secondbean=new NewHomeFragmentBean();
+        secondbean.setNewsdata(bean.getNewsdata());
+        secondbean.setNewsdatatime(bean.getNewsdatatime());
+        list.add(secondbean);
+
+        NewHomeFragmentBean thirdbean=new NewHomeFragmentBean();
+        thirdbean.setGeneralizelist(bean.getGeneralizelist());
+        thirdbean.setGeneralizelisttime(bean.getGeneralizelisttime());
+        list.add(thirdbean);
+
+        NewHomeFragmentBean fourthbean=new NewHomeFragmentBean();
+        fourthbean.setVlivelist(bean.getVlivelist());
+        fourthbean.setVlivelisttime(bean.getVlivelisttime());
+        list.add(fourthbean);
+
+        newHomeFragmentAdapter.notifyDataSetChanged();
+
     }
 }

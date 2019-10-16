@@ -1,4 +1,4 @@
-package com.xiaoshulin.vipbanlv.fragment.holder;
+package com.xiaoshulin.vipbanlv.NewHomefrags.holder;
 
 import android.app.Activity;
 import android.support.annotation.NonNull;
@@ -9,9 +9,9 @@ import com.xiaoshulin.vipbanlv.base.BaseViewHolder;
 /**
  * Created by jipeng on 2019-10-15 11:27.
  */
-public class NewHomeFragmentAdapterTopItemHolder extends BaseViewHolder {
+public class NewHomeFragmentAdaptersThirdItemHolder extends BaseViewHolder {
 
-    public NewHomeFragmentAdapterTopItemHolder(@NonNull Activity activity, @NonNull View itemView) {
+    public NewHomeFragmentAdaptersThirdItemHolder(@NonNull Activity activity, @NonNull View itemView) {
         super(activity, itemView);
     }
 
