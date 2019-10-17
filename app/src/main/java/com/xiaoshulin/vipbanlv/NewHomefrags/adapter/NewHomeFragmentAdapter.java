@@ -55,7 +55,7 @@ public class NewHomeFragmentAdapter extends RecyclerView.Adapter<BaseViewHolder>
 
     @Override
     public void onBindViewHolder(@NonNull BaseViewHolder holder, int position) {
-
+               holder.setData(list.get(position));
     }
 
     @Override

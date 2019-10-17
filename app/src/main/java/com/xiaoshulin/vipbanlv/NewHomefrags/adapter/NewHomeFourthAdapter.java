@@ -7,10 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.xiaoshulin.vipbanlv.NewHomefrags.holder.NewHomeFourthAdapterHolder;
 import com.xiaoshulin.vipbanlv.NewHomefrags.holder.NewHomeTopAdapterHolder;
 import com.xiaoshulin.vipbanlv.NewHomefrags.homebean.TopHomeBean;
 import com.xiaoshulin.vipbanlv.R;
 import com.xiaoshulin.vipbanlv.base.BaseViewHolder;
+import com.xiaoshulin.vipbanlv.bean.NewHomeFragmentBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,21 +20,21 @@ import java.util.List;
 /**
  * Created by jipeng on 2019-10-16 17:35.
  */
-public class NewHomeTopAdapter extends RecyclerView.Adapter<BaseViewHolder>{
+public class NewHomeFourthAdapter extends RecyclerView.Adapter<BaseViewHolder>{
 
-    List<TopHomeBean> list=new ArrayList<>();
+    List<NewHomeFragmentBean.VlivelistBean> list=new ArrayList<>();
 
     Activity activity;
 
-    public NewHomeTopAdapter(Activity activity) {
+    public NewHomeFourthAdapter(Activity activity) {
         this.activity = activity;
     }
 
     @NonNull
     @Override
     public BaseViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_new_home_top_viewpager_item_layout,parent,false);
-        NewHomeTopAdapterHolder homeTopAdapterHolder=new NewHomeTopAdapterHolder(activity,view);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_new_home_fourth_item_item_layout,parent,false);
+        NewHomeFourthAdapterHolder homeTopAdapterHolder=new NewHomeFourthAdapterHolder(activity,view);
         return homeTopAdapterHolder;
     }
 
@@ -46,7 +48,7 @@ public class NewHomeTopAdapter extends RecyclerView.Adapter<BaseViewHolder>{
          return list != null ? list.size() : 0;
     }
 
-    public List<TopHomeBean> getList() {
+    public List<NewHomeFragmentBean.VlivelistBean> getList() {
         return list;
     }
 }

@@ -5,18 +5,90 @@
     android:layout_height="match_parent"
     tools:context=".fragment.NewHomeFragment">
 
-    <TextView
-        android:id="@+id/tv_home_adv"
+    <RelativeLayout
+        android:id="@+id/rl_home_top"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/padding_45dp"
+        android:background="@color/white"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/attention"
+            android:layout_width="90dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/padding_10dp"
+            android:background="@drawable/bg_orange_round_corner_ripple"
+            android:gravity="center"
+            android:text="今日头条"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="小树林会员生活"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="@dimen/middle_word"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/padding_10dp"
+            android:background="@drawable/bg_orange_round_corner_ripple"
+            android:gravity="center"
+            android:text="树林生活"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <ViewFlipper
+        android:id="@+id/view_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/rl_home_top"
+        android:layout_gravity="center"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
         android:gravity="center"
-        android:text="头部广告" />
+        android:inAnimation="@anim/anim_in"
+        android:outAnimation="@anim/anim_out" />
 
     <com.jcodecraeer.xrecyclerview.XRecyclerView
         android:id="@+id/home_new_recycle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="76dp"
+        android:layout_marginBottom="@dimen/padding_45dp" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/padding_45dp"
+            android:drawableLeft="@android:drawable/btn_radio"
+            android:gravity="center"
+            android:text="密友圈" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/padding_45dp"
+            android:drawableLeft="@android:drawable/btn_radio"
+            android:gravity="center"
+            android:text="福利社" />
+    </RelativeLayout>
 </RelativeLayout>

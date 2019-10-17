@@ -3,6 +3,8 @@ package com.xiaoshulin.vipbanlv.fragment;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.ViewFlipper;
 
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.xiaoshulin.vipbanlv.R;
@@ -25,6 +27,8 @@ public class NewHomeFragment extends BaseMVPFragment implements INewHomeFragment
     XRecyclerView home_new_recycle;
 
     NewHomeFragmentAdapter newHomeFragmentAdapter;
+
+    private ViewFlipper view_flipper;
 
     public static NewHomeFragment newInstance() {
         NewHomeFragment fragment = new NewHomeFragment();
@@ -51,6 +55,13 @@ public class NewHomeFragment extends BaseMVPFragment implements INewHomeFragment
         newHomeFragmentAdapter=new NewHomeFragmentAdapter(getActivity());
         home_new_recycle.setAdapter(newHomeFragmentAdapter);
 
+        view_flipper = (ViewFlipper) mRootView.findViewById(R.id.view_flipper);
+        for (int i = 0; i <4; i++) {
+            View view = getLayoutInflater().inflate(R.layout.new_home_adv_item_layout,null);
+            view_flipper.addView(view);
+        }
+        view_flipper.setFlipInterval(2000);
+        view_flipper.startFlipping();
     }
 
     @Override
