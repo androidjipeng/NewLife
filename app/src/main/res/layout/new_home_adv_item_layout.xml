@@ -3,15 +3,18 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
-   <ImageView
-       android:layout_marginLeft="@dimen/padding_15dp"
-       android:src="@mipmap/iconapp"
-       android:layout_width="20dp"
-       android:layout_height="20dp"/>
-   <TextView
-       android:layout_marginLeft="@dimen/padding_15dp"
-       android:text="去app点赞，五星好评哦，快来点评吧～"
-       android:id="@+id/tv_adv"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/img_adv"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="@dimen/padding_15dp"
+        android:src="@mipmap/iconapp" />
+
+    <TextView
+        android:id="@+id/tv_adv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_15dp"
+        android:text="去app点赞，五星好评哦，快来点评吧～" />
 </LinearLayout>

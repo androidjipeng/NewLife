@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.xiaoshulin.vipbanlv.R;
 import com.xiaoshulin.vipbanlv.bean.NewHomeFragmentBean;
+import com.xiaoshulin.vipbanlv.utils.ParsingTools;
 
 import java.util.List;
 
@@ -21,9 +22,10 @@ public class ThirdPagerAdapter extends PagerAdapter {
 
     List<NewHomeFragmentBean.GeneralizelistBean> list;
     Activity activity;
-    public ThirdPagerAdapter(Activity activity,List<NewHomeFragmentBean.GeneralizelistBean> list) {
+
+    public ThirdPagerAdapter(Activity activity, List<NewHomeFragmentBean.GeneralizelistBean> list) {
         this.list = list;
-        this.activity=activity;
+        this.activity = activity;
     }
 
     @Override
@@ -39,11 +41,21 @@ public class ThirdPagerAdapter extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        View view= LayoutInflater.from(activity).inflate(R.layout.fragment_new_home_third_viewpage_item_layout,null,false);
-        ImageView imageView=view.findViewById(R.id.img_third_bg);
+        View view = LayoutInflater.from(activity).inflate(R.layout.fragment_new_home_third_viewpage_item_layout, null, false);
+        ImageView imageView = view.findViewById(R.id.img_third_bg);
         Glide.with(activity)
                 .load(list.get(position).getIcon())
                 .into(imageView);
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ParsingTools tools=new ParsingTools();
+                tools.SecondParseTool(activity,list.get(position).getUrl());
+
+            }
+        });
+
         container.addView(view);
         return view;
     }

@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide;
 import com.xiaoshulin.vipbanlv.R;
 import com.xiaoshulin.vipbanlv.base.BaseViewHolder;
 import com.xiaoshulin.vipbanlv.bean.NewHomeFragmentBean;
+import com.xiaoshulin.vipbanlv.utils.ParsingTools;
 
 import java.util.List;
 
@@ -51,5 +52,29 @@ public class NewHomeFragmentAdaptersSecondItemHolder extends BaseViewHolder {
                 tv_second_content2.setText("2."+newslist.get(i).getTitle());
             }
         }
+
+        tv_second_content1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (newslist.size()>1){
+                    ParsingTools tools=new ParsingTools();
+                    tools.SecondParseTool(activity,newslist.get(0).getUrl());
+//                    ParsingTools.FirstParseTool(newslist.get(0).getUrl());
+                }
+
+            }
+        });
+
+        tv_second_content1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (newslist.size()>=2){
+                    ParsingTools tools=new ParsingTools();
+                    tools.SecondParseTool(activity,newslist.get(1).getUrl());
+//                    ParsingTools.FirstParseTool(newslist.get(1).getUrl());
+                }
+
+            }
+        });
     }
 }

@@ -6,7 +6,7 @@ import com.google.gson.Gson;
 import com.xiaoshulin.vipbanlv.ApiUtils.ApiUtils;
 import com.xiaoshulin.vipbanlv.base.BasePresenter;
 import com.xiaoshulin.vipbanlv.bean.NewHomeFragmentBean;
-import com.xiaoshulin.vipbanlv.bean.danMuBean;
+import com.xiaoshulin.vipbanlv.bean.result.NewHomeTopAdvBean;
 import com.xiaoshulin.vipbanlv.utils.SharePreferenceUtil;
 import com.xiaoshulin.vipbanlv.utils.Utils;
 import com.xiaoshulin.vipbanlv.view.INewHomeFragmentView;
@@ -25,6 +25,38 @@ public class NewHomeFragmentPresenter extends BasePresenter {
     public NewHomeFragmentPresenter(INewHomeFragmentView iNewHomeFragmentView) {
         this.iNewHomeFragmentView = iNewHomeFragmentView;
     }
+
+
+    public void getAdvHomeData(){
+        String stringUId = SharePreferenceUtil.getinstance().getStringUId();
+        String stringUIdToken = SharePreferenceUtil.getinstance().getStringUIdToken();
+        String sign = Utils.getUidSign(stringUId);
+        OkHttpUtils.get()
+                .url(ApiUtils.URL)
+                .addParams("m", "title")
+                .addParams("a", "headline")
+                .addParams("uid", stringUId)
+                .addParams("machine_type", String.valueOf(1))
+                .addParams("sign", sign)
+                .addParams("version", Utils.getLocalVersionName())
+                .addParams("uidtoken", stringUIdToken)
+                .build()
+                .execute(new StringCallback() {
+                    @Override
+                    public void onError(Call call, Exception e, int id) {
+                        Log.e(TAG, "新首页  onError: " + e.getMessage());
+                    }
+
+                    @Override
+                    public void onResponse(String response, int id) {
+                        Log.e(TAG, "新首页----------------onResponse: " + response);
+                        Gson gson = new Gson();
+                        NewHomeTopAdvBean bean=gson.fromJson(response, NewHomeTopAdvBean.class);
+                        iNewHomeFragmentView.getNewHomeFragmentAdvData(bean);
+                    }
+                });
+    }
+
 
     public void getHomeData() {
         

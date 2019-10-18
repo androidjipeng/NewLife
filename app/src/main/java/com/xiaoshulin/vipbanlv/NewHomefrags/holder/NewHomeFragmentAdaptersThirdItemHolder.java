@@ -67,5 +67,6 @@ public class NewHomeFragmentAdaptersThirdItemHolder extends BaseViewHolder {
         //设定页面自动切换  间隔2秒
         ultra_second_viewpager.setAutoScroll(2000);
 
+
     }
 }
