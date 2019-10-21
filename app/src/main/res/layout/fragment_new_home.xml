@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/rl_home"
     tools:context=".fragment.NewHomeFragment">
 
     <RelativeLayout
@@ -81,7 +81,8 @@
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="@dimen/padding_45dp"
-            android:drawableLeft="@android:drawable/btn_radio"
+            android:drawableLeft="@drawable/ic_vipmore"
+            android:drawablePadding="@dimen/small_db"
             android:gravity="center"
             android:text="密友圈" />
 
@@ -91,7 +92,8 @@
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_marginRight="@dimen/padding_45dp"
-            android:drawableLeft="@android:drawable/btn_radio"
+            android:drawableLeft="@drawable/ic_vipmore"
+            android:drawablePadding="@dimen/small_db"
             android:gravity="center"
             android:text="福利社" />
     </RelativeLayout>

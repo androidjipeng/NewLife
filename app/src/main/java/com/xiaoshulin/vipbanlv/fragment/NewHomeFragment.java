@@ -10,7 +10,6 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
@@ -20,8 +19,11 @@ import com.xiaoshulin.vipbanlv.base.BaseMVPFragment;
 import com.xiaoshulin.vipbanlv.base.BasePresenter;
 import com.xiaoshulin.vipbanlv.bean.NewHomeFragmentBean;
 import com.xiaoshulin.vipbanlv.NewHomefrags.adapter.NewHomeFragmentAdapter;
+import com.xiaoshulin.vipbanlv.bean.result.NewHomeBottomWelfareBean;
 import com.xiaoshulin.vipbanlv.bean.result.NewHomeTopAdvBean;
+import com.xiaoshulin.vipbanlv.bean.result.NewHomebottomFriendsBean;
 import com.xiaoshulin.vipbanlv.popup.NewHomePop;
+import com.xiaoshulin.vipbanlv.popup.NewHomeRightPop;
 import com.xiaoshulin.vipbanlv.presenter.NewHomeFragmentPresenter;
 import com.xiaoshulin.vipbanlv.utils.ParsingTools;
 import com.xiaoshulin.vipbanlv.view.INewHomeFragmentView;
@@ -88,7 +90,7 @@ public class NewHomeFragment extends BaseMVPFragment implements INewHomeFragment
         home_friends.setOnClickListener(this);
         home_welfare_agency.setOnClickListener(this);
 
-        rl_home=mRootView.findViewById(R.id.rl_home);
+        rl_home = mRootView.findViewById(R.id.rl_home);
     }
 
     @Override
@@ -116,6 +118,53 @@ public class NewHomeFragment extends BaseMVPFragment implements INewHomeFragment
 
         showNewHomeAdvUI(homeTopAdvBean);
 
+    }
+
+    @Override
+    public void getNewHomeBottomWelfareData(NewHomeBottomWelfareBean newHomeBottomWelfareBean) {
+        //福利社的数据返回   
+        
+        showBottomWelfarePop(newHomeBottomWelfareBean);
+        
+    }
+
+  
+
+    @Override
+    public void getNewHomebottomFriendsData(NewHomebottomFriendsBean newHomebottomFriendsBean) {
+        //密友圈的数据返回
+        
+        showBottomFriendsPop(newHomebottomFriendsBean);
+        
+    }
+
+    private void showBottomFriendsPop(NewHomebottomFriendsBean newHomebottomFriendsBean) {
+        NewHomePop pop = new NewHomePop(getContext());
+        int offsetX = (rl_home.getMeasuredWidth() + 400);
+        int offsetY = -(home_friends.getMeasuredHeight() + home_friends.getHeight() * 4);
+
+        if (Build.VERSION.SDK_INT < 24) {
+            pop.showAsDropDown(rl_home);
+//            popupWindow.showAsDropDown(anchor);
+        } else {
+            // 适配 android 7.0
+            int[] location = new int[2];
+            // 获取控件在屏幕的位置
+//            anchor.getLocationOnScreen(location);
+//            popupWindow.showAtLocation(anchor, Gravity.NO_GRAVITY, 0, location[1] + anchor.getHeight());
+
+
+        }
+//        pop.showAsDropDown(rl_home, 0, offsetY, Gravity.BOTTOM);
+        pop.update();
+    }
+
+    private void showBottomWelfarePop(NewHomeBottomWelfareBean newHomeBottomWelfareBean) {
+
+        NewHomeRightPop pop1 = new NewHomeRightPop(getContext());
+        int offsetY1 = -(home_welfare_agency.getMeasuredHeight() + home_welfare_agency.getHeight() * 4);
+//        pop1.showAsDropDown(rl_home, 0, offsetY1, Gravity.BOTTOM);
+        pop1.update();
     }
 
     private void showNewHomeAdvUI(NewHomeTopAdvBean homeTopAdvBean) {
@@ -186,13 +235,14 @@ public class NewHomeFragment extends BaseMVPFragment implements INewHomeFragment
                 break;
             case R.id.home_friends:
                 //密友圈
-                NewHomePop pop=new NewHomePop(getContext());
-               int offsetX =(rl_home.getMeasuredWidth()+400);
-               int offsetY = -(home_friends.getMeasuredHeight()+home_friends.getHeight());
-                pop.showAsDropDown(home_friends,offsetX,offsetY, Gravity.TOP);
+                presenter.getFriendsData();
+
                 break;
             case R.id.home_welfare_agency:
                 //福利社
+                presenter.getWelfareData();
+
+
                 break;
             default:
 
