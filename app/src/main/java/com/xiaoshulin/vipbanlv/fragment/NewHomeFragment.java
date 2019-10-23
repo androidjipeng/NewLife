@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.xiaoshulin.vipbanlv.R;
 import com.xiaoshulin.vipbanlv.base.BaseMVPFragment;
@@ -133,38 +134,48 @@ public class NewHomeFragment extends BaseMVPFragment implements INewHomeFragment
     @Override
     public void getNewHomebottomFriendsData(NewHomebottomFriendsBean newHomebottomFriendsBean) {
         //密友圈的数据返回
-        
+
         showBottomFriendsPop(newHomebottomFriendsBean);
         
     }
 
     private void showBottomFriendsPop(NewHomebottomFriendsBean newHomebottomFriendsBean) {
-        NewHomePop pop = new NewHomePop(getContext());
+        NewHomePop pop = new NewHomePop(getContext(),newHomebottomFriendsBean);
         int offsetX = (rl_home.getMeasuredWidth() + 400);
         int offsetY = -(home_friends.getMeasuredHeight() + home_friends.getHeight() * 4);
 
         if (Build.VERSION.SDK_INT < 24) {
-            pop.showAsDropDown(rl_home);
+            pop.showAsDropDown(home_friends);
 //            popupWindow.showAsDropDown(anchor);
         } else {
             // 适配 android 7.0
             int[] location = new int[2];
             // 获取控件在屏幕的位置
-//            anchor.getLocationOnScreen(location);
-//            popupWindow.showAtLocation(anchor, Gravity.NO_GRAVITY, 0, location[1] + anchor.getHeight());
-
+            rl_home.getLocationOnScreen(location);
+            pop.showAtLocation(rl_home, Gravity.NO_GRAVITY, 0, location[1]+rl_home.getHeight()+offsetY);
 
         }
 //        pop.showAsDropDown(rl_home, 0, offsetY, Gravity.BOTTOM);
-        pop.update();
+//        pop.update();
     }
 
     private void showBottomWelfarePop(NewHomeBottomWelfareBean newHomeBottomWelfareBean) {
 
-        NewHomeRightPop pop1 = new NewHomeRightPop(getContext());
+        NewHomeRightPop pop1 = new NewHomeRightPop(getContext(),newHomeBottomWelfareBean);
         int offsetY1 = -(home_welfare_agency.getMeasuredHeight() + home_welfare_agency.getHeight() * 4);
+        if (Build.VERSION.SDK_INT < 24) {
+            pop1.showAsDropDown(home_welfare_agency);
+//            popupWindow.showAsDropDown(anchor);
+        } else {
+            // 适配 android 7.0
+            int[] location = new int[2];
+            // 获取控件在屏幕的位置
+            rl_home.getLocationOnScreen(location);
+            pop1.showAtLocation(rl_home, Gravity.NO_GRAVITY, 0, location[1] +rl_home.getHeight()+offsetY1);
+
+        }
 //        pop1.showAsDropDown(rl_home, 0, offsetY1, Gravity.BOTTOM);
-        pop1.update();
+//        pop1.update();
     }
 
     private void showNewHomeAdvUI(NewHomeTopAdvBean homeTopAdvBean) {
@@ -223,15 +234,24 @@ public class NewHomeFragment extends BaseMVPFragment implements INewHomeFragment
 
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_home_left:
                 //今日头条
+                String url="https://m.toutiao.com/?W2atIF=1";
+                ARouter.getInstance()
+                        .build("/activity/WebActivity")
+                        .withString("url", url)
+                        .navigation();
                 break;
             case R.id.btn_home_right:
                 //树林生活
+                String url_xiaoshulin="http://www.vipbanlv.com/v2_test/#!/life";
+                ARouter.getInstance()
+                        .build("/activity/WebActivity")
+                        .withString("url", url_xiaoshulin)
+                        .navigation();
                 break;
             case R.id.home_friends:
                 //密友圈
