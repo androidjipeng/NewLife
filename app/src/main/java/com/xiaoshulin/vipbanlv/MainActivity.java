@@ -161,7 +161,10 @@ import master.flame.danmaku.danmaku.parser.BaseDanmakuParser;
 import master.flame.danmaku.danmaku.parser.IDataSource;
 import master.flame.danmaku.danmaku.util.IOUtils;
 import okhttp3.Call;
-/**首页测试*/
+
+/**
+ * 首页测试
+ */
 public class MainActivity extends BaseMVPActivity implements MainView, BottomNavigationBar.OnTabSelectedListener {
 
     private static final String TAG = "MainActivity";
@@ -560,13 +563,18 @@ public class MainActivity extends BaseMVPActivity implements MainView, BottomNav
                 // 没有写的权限，去申请写的权限，会弹出对话框
                 ActivityCompat.requestPermissions(activity, PERMISSIONS_STORAGE, REQUEST_EXTERNAL_STORAGE);
             } else {
+                //有权限的情况下
                 LocalDataBean bean = readfile();
                 String uid = bean.getUid();
                 if (!TextUtils.isEmpty(uid)) {
                     SharePreferenceUtil.getinstance().setStringUID(uid);
                     SharePreferenceUtil.getinstance().setStringUIdToken(bean.getUidtoken());
                     setTagAndAlias();
+
+                    //如果他卸载过，但是本地是有uid的在这里显示首页数据
+                    setDefaultFragment();
                 } else {
+                    //第一次安装
                     initdata();
                 }
             }
@@ -785,7 +793,12 @@ public class MainActivity extends BaseMVPActivity implements MainView, BottomNav
                 .setFirstSelectedPosition(lastSelectedPosition)
                 .initialise(); //initialise 一定要放在 所有设置的最后一项
 
-        setDefaultFragment();//设置默认导航栏
+
+        SharePreferenceUtil util = SharePreferenceUtil.getinstance();
+        if (!TextUtils.isEmpty(util.getStringUId())) {
+            setDefaultFragment();//设置默认导航栏
+        }
+
 
     }
 
@@ -829,7 +842,7 @@ public class MainActivity extends BaseMVPActivity implements MainView, BottomNav
     private void setDefaultFragment() {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
-        NewHomeFragment newHomeFragment=NewHomeFragment.newInstance();
+        NewHomeFragment newHomeFragment = NewHomeFragment.newInstance();
         transaction.replace(R.id.layFrame, newHomeFragment);
 //        homeFragment = HomeFragment.newInstance();
 //        transaction.replace(R.id.layFrame, homeFragment);
@@ -948,12 +961,16 @@ public class MainActivity extends BaseMVPActivity implements MainView, BottomNav
             /**保存本地*/
             savefile(registerBean.getUid(), registerBean.getUidtoken());
             setTagAndAlias();
-
+            //注册成功了
+            setDefaultFragment();
         }
+
+
     }
 
     List<danMuBean.DataBean> data;
-    int i=0;
+    int i = 0;
+
     /**
      * 显示弹幕
      */
@@ -961,13 +978,13 @@ public class MainActivity extends BaseMVPActivity implements MainView, BottomNav
     public void getDanmuData(danMuBean bean) {
         data = bean.getData();
 
-        Log.e(TAG, "getDanmuData: --------------data："+data.size() );
+        Log.e(TAG, "getDanmuData: --------------data：" + data.size());
 
-        CountDownTimer timer=new CountDownTimer(data.size()*100000,1000) {
+        CountDownTimer timer = new CountDownTimer(data.size() * 100000, 1000) {
             @Override
             public void onTick(long l) {
-                if (i<data.size()){
-                    Log.e(TAG, "onTick: l----"+l );
+                if (i < data.size()) {
+                    Log.e(TAG, "onTick: l----" + l);
                     BaseDanmaku danmaku = mContext.mDanmakuFactory.createDanmaku(BaseDanmaku.TYPE_SCROLL_RL);
                     if (danmaku == null || mDanmakuView == null) {
                         return;
@@ -984,8 +1001,8 @@ public class MainActivity extends BaseMVPActivity implements MainView, BottomNav
                     danmaku.borderColor = Color.RED;
                     mDanmakuView.addDanmaku(danmaku);
                     i++;
-                }else {
-                    i=0;
+                } else {
+                    i = 0;
                 }
             }
 
@@ -996,7 +1013,9 @@ public class MainActivity extends BaseMVPActivity implements MainView, BottomNav
         }.start();
 
     }
+
     WarningDialog dialogSupport;
+
     @Override
     public void getSupportMoney(SupportBean registerBean) {
         /**打赏的回调数据*/
@@ -1004,7 +1023,7 @@ public class MainActivity extends BaseMVPActivity implements MainView, BottomNav
         if (registerBean.getReturncode() == 0) {
             ToastUtil.showToast(url);
         } else {
-          dialogSupport = new WarningDialog(context, url, "取消", "V币优充", new View.OnClickListener() {
+            dialogSupport = new WarningDialog(context, url, "取消", "V币优充", new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     switch (view.getId()) {
@@ -1025,13 +1044,15 @@ public class MainActivity extends BaseMVPActivity implements MainView, BottomNav
         }
     }
 
-    /**每次进来都要去更新版本数据*/
+    /**
+     * 每次进来都要去更新版本数据
+     */
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
     public void getCheckVisionBean(CheckVisionBean bean) {
 
         String type = bean.getVtype();//是否出现弹幕
-        String money =bean.getVmoney();//0是新用户
+        String money = bean.getVmoney();//0是新用户
 
         /**显示是不是新用户弹框*/
         if (money.equals("0")) {

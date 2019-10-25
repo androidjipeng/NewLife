@@ -72,10 +72,10 @@ public class NewHomeFragmentAdapterTopItemHolder extends BaseViewHolder {
             if (i<12){
                 //装入adapter的集合中
                 topHomeBeanlist.add(topHomeBean);
-                Log.e("jp","---------childItemlist00000000:::"+topHomeBeanlist.size());
+//                Log.e("jp","---------childItemlist00000000:::"+topHomeBeanlist.size());
             }else {
                 topHomeBeanlist1.add(topHomeBean);
-                Log.e("jp","---------childItemlist1111111:::"+topHomeBeanlist1.size());
+//                Log.e("jp","---------childItemlist1111111:::"+topHomeBeanlist1.size());
             }
 
         }
@@ -94,9 +94,9 @@ public class NewHomeFragmentAdapterTopItemHolder extends BaseViewHolder {
         //设置indicator样式
         ultra_viewpager.getIndicator()
                 .setOrientation(UltraViewPager.Orientation.HORIZONTAL)
-                .setFocusColor(Color.GREEN)
-                .setNormalColor(Color.WHITE)
-                .setRadius((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 5, activity.getResources().getDisplayMetrics()));
+                .setFocusColor(Color.RED)
+                .setNormalColor(Color.GRAY)
+                .setRadius((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 3, activity.getResources().getDisplayMetrics()));
         //设置indicator对齐方式
         ultra_viewpager.getIndicator().setGravity(Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM);
         //构造indicator,绑定到UltraViewPager

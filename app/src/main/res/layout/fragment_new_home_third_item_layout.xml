@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/small_db"
+    android:layout_height="80dp"
+    android:background="@color/white"
+    android:layout_marginBottom="@dimen/padding_8dp"
     android:orientation="vertical">
     <com.tmall.ultraviewpager.UltraViewPager
         android:id="@+id/ultra_second_viewpager"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/padding_5dp"
         android:layout_centerInParent="true"
         android:background="@android:color/white" />
-
 </LinearLayout>

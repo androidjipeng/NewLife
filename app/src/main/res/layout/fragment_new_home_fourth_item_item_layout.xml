@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="50dp"
     android:layout_marginTop="1dp"
     android:layout_marginLeft="1dp"
     android:background="@color/white"
@@ -17,26 +17,29 @@
         android:orientation="vertical">
 
         <TextView
+            android:textColor="@color/color_333333"
+            android:textStyle="bold"
             android:layout_marginLeft="@dimen/padding_15dp"
             android:id="@+id/tv_fourth_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="left|center"
-            android:textSize="17sp" />
+            android:textSize="@dimen/small_word" />
 
         <TextView
+            android:textColor="@color/color_828292"
             android:layout_marginLeft="@dimen/padding_15dp"
-            android:layout_marginTop="@dimen/padding_15dp"
+            android:layout_marginTop="@dimen/padding_5dp"
             android:id="@+id/tv_fourth_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="left|center"
-            android:textSize="14sp" />
+            android:textSize="@dimen/word_10sp" />
     </LinearLayout>
 
     <ImageView
         android:id="@+id/img_fourth_home"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="@dimen/padding_35dp"
+        android:layout_height="@dimen/padding_35dp"
         android:layout_marginRight="@dimen/padding_15dp" />
 </LinearLayout>

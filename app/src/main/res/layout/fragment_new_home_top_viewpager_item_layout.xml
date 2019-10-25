@@ -4,18 +4,21 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:id="@+id/ll_top_item"
-    android:padding="@dimen/padding_15dp"
+    android:paddingTop="@dimen/padding_15dp"
     android:orientation="vertical">
 
     <ImageView
+        android:layout_marginBottom="@dimen/small_db"
         android:id="@+id/img_top_home"
-        android:layout_width="@dimen/padding_45dp"
-        android:layout_height="@dimen/padding_45dp"/>
+        android:layout_width="@dimen/padding_25dp"
+        android:layout_height="@dimen/padding_25dp"/>
 
     <TextView
+        android:textSize="@dimen/word_10sp"
+        android:textColor="@color/color_333333"
         android:id="@+id/tv_top_home_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="" />
+        android:text="ee" />
 </LinearLayout>

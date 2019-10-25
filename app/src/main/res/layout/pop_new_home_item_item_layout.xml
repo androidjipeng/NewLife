@@ -5,9 +5,10 @@
     android:layout_marginTop="@dimen/small_db"
     android:orientation="vertical">
   <TextView
+      android:textSize="@dimen/small_word"
       android:textColor="@color/white"
-      android:paddingTop="@dimen/padding_10dp"
-      android:paddingBottom="@dimen/padding_10dp"
+      android:paddingTop="@dimen/padding_8dp"
+      android:paddingBottom="@dimen/padding_8dp"
       android:gravity="center"
       android:id="@+id/tv_pop_content_item"
       android:layout_width="match_parent"

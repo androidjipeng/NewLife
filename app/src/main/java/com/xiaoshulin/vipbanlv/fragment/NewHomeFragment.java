@@ -124,23 +124,22 @@ public class NewHomeFragment extends BaseMVPFragment implements INewHomeFragment
     @Override
     public void getNewHomeBottomWelfareData(NewHomeBottomWelfareBean newHomeBottomWelfareBean) {
         //福利社的数据返回   
-        
+
         showBottomWelfarePop(newHomeBottomWelfareBean);
-        
+
     }
 
-  
 
     @Override
     public void getNewHomebottomFriendsData(NewHomebottomFriendsBean newHomebottomFriendsBean) {
         //密友圈的数据返回
 
         showBottomFriendsPop(newHomebottomFriendsBean);
-        
+
     }
 
     private void showBottomFriendsPop(NewHomebottomFriendsBean newHomebottomFriendsBean) {
-        NewHomePop pop = new NewHomePop(getContext(),newHomebottomFriendsBean);
+        NewHomePop pop = new NewHomePop(getContext(), newHomebottomFriendsBean);
         int offsetX = (rl_home.getMeasuredWidth() + 400);
         int offsetY = -(home_friends.getMeasuredHeight() + home_friends.getHeight() * 4);
 
@@ -152,7 +151,7 @@ public class NewHomeFragment extends BaseMVPFragment implements INewHomeFragment
             int[] location = new int[2];
             // 获取控件在屏幕的位置
             rl_home.getLocationOnScreen(location);
-            pop.showAtLocation(rl_home, Gravity.NO_GRAVITY, 0, location[1]+rl_home.getHeight()+offsetY);
+            pop.showAtLocation(rl_home, Gravity.NO_GRAVITY, 0, location[1] + rl_home.getHeight() + offsetY);
 
         }
 //        pop.showAsDropDown(rl_home, 0, offsetY, Gravity.BOTTOM);
@@ -161,7 +160,7 @@ public class NewHomeFragment extends BaseMVPFragment implements INewHomeFragment
 
     private void showBottomWelfarePop(NewHomeBottomWelfareBean newHomeBottomWelfareBean) {
 
-        NewHomeRightPop pop1 = new NewHomeRightPop(getContext(),newHomeBottomWelfareBean);
+        NewHomeRightPop pop1 = new NewHomeRightPop(getContext(), newHomeBottomWelfareBean);
         int offsetY1 = -(home_welfare_agency.getMeasuredHeight() + home_welfare_agency.getHeight() * 4);
         if (Build.VERSION.SDK_INT < 24) {
             pop1.showAsDropDown(home_welfare_agency);
@@ -171,7 +170,7 @@ public class NewHomeFragment extends BaseMVPFragment implements INewHomeFragment
             int[] location = new int[2];
             // 获取控件在屏幕的位置
             rl_home.getLocationOnScreen(location);
-            pop1.showAtLocation(rl_home, Gravity.NO_GRAVITY, 0, location[1] +rl_home.getHeight()+offsetY1);
+            pop1.showAtLocation(rl_home, Gravity.NO_GRAVITY, 0, location[1] + rl_home.getHeight() + offsetY1);
 
         }
 //        pop1.showAsDropDown(rl_home, 0, offsetY1, Gravity.BOTTOM);
@@ -239,7 +238,7 @@ public class NewHomeFragment extends BaseMVPFragment implements INewHomeFragment
         switch (view.getId()) {
             case R.id.btn_home_left:
                 //今日头条
-                String url="https://m.toutiao.com/?W2atIF=1";
+                String url = "https://m.toutiao.com/?W2atIF=1";
                 ARouter.getInstance()
                         .build("/activity/WebActivity")
                         .withString("url", url)
@@ -247,7 +246,7 @@ public class NewHomeFragment extends BaseMVPFragment implements INewHomeFragment
                 break;
             case R.id.btn_home_right:
                 //树林生活
-                String url_xiaoshulin="http://www.vipbanlv.com/v2_test/#!/life";
+                String url_xiaoshulin = "http://www.vipbanlv.com/v2_test/#!/life";
                 ARouter.getInstance()
                         .build("/activity/WebActivity")
                         .withString("url", url_xiaoshulin)
@@ -261,7 +260,6 @@ public class NewHomeFragment extends BaseMVPFragment implements INewHomeFragment
             case R.id.home_welfare_agency:
                 //福利社
                 presenter.getWelfareData();
-
 
                 break;
             default:

@@ -8,7 +8,7 @@
         android:id="@+id/scroll"
         android:background="@drawable/red_circle_bg"
         android:layout_marginRight="20dp"
-        android:layout_width="150dp"
+        android:layout_width="120dp"
         android:layout_height="180dp">
         <LinearLayout
             android:id="@+id/ll_right_content"
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/scroll"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="80dp"
+        android:layout_marginRight="70dp"
         android:gravity="center"
         android:src="@drawable/triangle_down" />
 </RelativeLayout>

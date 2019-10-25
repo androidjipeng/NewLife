@@ -38,6 +38,11 @@
         <item name="android:windowExitAnimation">@anim/menuhide</item>
     </style>
 
+    <style name="new_home_pop_anim_style">
+        <item name="android:windowEnterAnimation">@anim/anim_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_out</item>
+    </style>
+
     <style name="BottomDialog" parent="@style/AppTheme">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">300dp</item>

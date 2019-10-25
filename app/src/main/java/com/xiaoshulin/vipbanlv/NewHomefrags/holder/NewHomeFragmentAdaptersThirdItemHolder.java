@@ -54,9 +54,9 @@ public class NewHomeFragmentAdaptersThirdItemHolder extends BaseViewHolder {
         //设置indicator样式
         ultra_second_viewpager.getIndicator()
                 .setOrientation(UltraViewPager.Orientation.HORIZONTAL)
-                .setFocusColor(Color.GREEN)
+                .setFocusColor(Color.GRAY)
                 .setNormalColor(Color.WHITE)
-                .setRadius((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 5, activity.getResources().getDisplayMetrics()));
+                .setRadius((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 3, activity.getResources().getDisplayMetrics()));
         //设置indicator对齐方式
         ultra_second_viewpager.getIndicator().setGravity(Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM);
         //构造indicator,绑定到UltraViewPager

@@ -37,7 +37,7 @@ public class NewHomeRightPop extends PopupWindow {
         this.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
 /*        ColorDrawable dw = new ColorDrawable(-00000);
         mMenuView.setBackgroundDrawable(dw);*/
-        this.setAnimationStyle(R.style.popwin_anim_style);
+        this.setAnimationStyle(R.style.new_home_pop_anim_style);
         this.setBackgroundDrawable(new ColorDrawable(002200));
         this.setOutsideTouchable(true);
         this.setFocusable(true);
